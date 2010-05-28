@@ -1,0 +1,9 @@
+de:
+  pagination:
+    per_page: Pro Seite
+    filter: filtern
+    previous_label: Zurück
+    next_label: Weiter
+    go: Los
+    filter_by_title: per Bezeichnung filtern
+    filter_by_email: per E-Mail filtern

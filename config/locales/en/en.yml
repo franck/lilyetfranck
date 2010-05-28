@@ -1,0 +1,14 @@
+en:
+  cancel: cancel
+  back: back
+  
+  time:
+    formats:
+      only_date: "%e %B %Y"
+      short_date: "%e %b %y"
+      short_datetime: "%A %d %b %y - %H:%M"
+
+  activerecord:
+    errors:
+      full_messages:
+        format: "{{message}}"

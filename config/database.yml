@@ -1,0 +1,31 @@
+development:
+  adapter: mysql
+  database: lilyetfranck_dev
+  username: root
+  password:
+  host: localhost
+  encoding: utf8
+
+test:
+  adapter: mysql
+  database: lilyetfranck_test
+  username: root
+  password:
+  host: localhost
+  encoding: utf8
+
+staging:
+  adapter: mysql
+  database: lilyetfranck_staging
+  username: root
+  password:
+  host: localhost
+  encoding: utf8
+
+production:
+  adapter: mysql
+  database: lilyetfranck_production
+  username:
+  password:
+  host: localhost
+  encoding: utf8

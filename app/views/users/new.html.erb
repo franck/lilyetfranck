@@ -1,0 +1,13 @@
+<% title t('users.page_title.new') %>
+
+<% form_for @user, :url => account_path, :html => { :class => "standard" } do |f| %>
+  <%= f.error_messages :header_message => t('users.error_messages.new') %>
+  <ul>
+    <%= render :partial => "form", :object => f %>
+    <li>
+      <%= f.submit t('users.create') %>
+      <%= link_to t('cancel'), users_path %>
+    </li>
+  </ul>
+  
+<% end %>

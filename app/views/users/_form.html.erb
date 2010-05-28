@@ -1,0 +1,32 @@
+<li>
+  <label for="name" class="desc"><%= t('users.name') %></label>
+  <span><%= form.text_field :firstname, :size => "25", :class => "text" %><%= form.label :firstname, t('users.firstname'), :class => "required" %></span>
+  <span><%= form.text_field :lastname, :size => "25", :class => "text" %><%= form.label :lastname, t('users.lastname'), :class => "required" %></span>
+</li>
+<li>
+  <%= form.label :email, t('users.email') %>
+  <%= form.text_field :email, :class => "text" %>
+</li>
+<li>
+  <%= form.label :password, t('users.change_password'), :class => "desc" %>
+  <%= form.password_field :password, :class => "text" %>
+</li>
+<li>
+  <%= form.label :password_confirmation, t('users.password_confirmation'), :class => "desc" %>
+  <%= form.password_field :password_confirmation, :class => "text" %>
+</li>
+
+<% show_to :admin do %>
+<li>
+  <div class="col">
+    <% for role in Role::ROLES %>
+    <span>
+      <%= check_box_tag "roles[]", role, @user.role_objects.detect{|r| r.name == role }, :class => "checkbox" %>
+      <label class="choice"><%= t("users.roles_list.#{role}") %></label>
+    </span>
+    <% end %>
+  </div>
+</li>
+<% end %>
+
+

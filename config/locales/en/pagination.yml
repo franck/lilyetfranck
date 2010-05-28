@@ -1,0 +1,9 @@
+en:
+  pagination:
+    per_page: Per page
+    filter: filter
+    previous_label: Previous
+    next_label: Next
+    go: Go
+    filter_by_title: filter by title
+    filter_by_email: filter by email

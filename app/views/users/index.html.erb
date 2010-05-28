@@ -1,0 +1,26 @@
+<% title "Users" %>
+
+<%= will_paginate @users %>
+
+<table>
+  <tr>
+    <th><%= t('users.email') %></th>
+    <th><%= t('users.roles') %></th>
+    <th><%= t('users.actions_title') %></th>
+  </tr>
+  <% for user in @users %>
+  <tr>
+    <td><%= link_to user.email, user_path(user) %></td>
+    <td><%= user.roles %></td>
+    <td>
+      <%= link_to t('users.actions.edit'), edit_user_path(user) %>
+      <%= link_to t('users.actions.destroy'), user_path(user), :method => :delete, :confirm => t('users.are_you_sure?') %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<% show_to :admin do %>
+  <%= link_to t('users.add_user'), new_user_path %>
+<% end %>
+

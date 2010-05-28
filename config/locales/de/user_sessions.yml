@@ -1,0 +1,76 @@
+de:
+  users:
+    index_title: Benutzerliste
+    add_title: Benutzer hinzufügen
+    edit_title: "Bearbeiten: {{login}}"
+    crop_title: Ihr Bild anpassen
+    change_password_title: Ihr Kennwort ändern
+    
+    page_title:
+      index: Benutzer
+      change_password: Ihr Kennwort ändern
+      password_resets_edit_title: Ihr Kennwort ändern
+      crop: IHr Bild anpassen
+      edit: "Bearbeiten: {{login}}"
+      new: Benutzer hinzufügen
+    
+    roles: Verzeichnisse
+    roles_list:
+      admin: Admin
+      user: Benutzer
+      
+    actions_title: Aktionen
+    actions:
+      edit: bearbeiten
+      destroy: entfernen
+      
+    change_password: Kennwort ändern
+    password: Kennwort
+    password_confirmation: Bestätigung des Kennworts
+    submit: Login
+    create: Erstellen
+    update: Update
+    change: Ändern
+    crop: Anpassen
+    preview: Übersicht
+    
+    search: Suchen
+    
+    users_list: Vermittler verwalten
+    state: Status
+    featured: Titelseite
+    contact: kontaktieren
+    no_result: kein Ergebnis
+    
+    this_user_is_desactivated: Dieses Konto ist nicht aktiv!
+   
+    edit: bearbeiten
+    add_user: Benutzer hinzufügen
+    
+    delete_user: entfernen
+    are_you_sure?: Sind Sie sicher?
+    
+    login: Login
+    email: E-Mail
+    name: Name
+    no_name: Kein Name
+    firstname: Vorname
+    lastname: Nachname
+    phone_numbers: Telefonnummer
+    phone: Festnetz
+    mobile: Mobil
+    status: Status
+    avatar: Bild
+    instruct_picture: Sie werden die Möglichkeit haben Ihr Bild anzupassen.
+    
+    flash:
+     
+    error_messages:     
+      new: Unmöglich diesen Benutzer zu erstellen
+      edit: Unmöglich diesen Benutzer zu bearbeiten
+      email_length: Die E-Mail-Adresse ist zu kurz. (6 bis 100 Zeichen)
+      email_format: Die E-Mail-Adresse ist unzulässig
+      email_uniqueness: Die E-Mail befindet bereits in der Datenbank
+      password_length: Das Kennwort ist zu kurz. (min. 4 Zeichen)
+      password_confirmation_length: DIe Größe der Kennwort-Bestätigung ist unzulässig.
+      confirmation_of_password_field: Die Bestätigung des Kennworts entspricht dem eingegebenen Kennwort nicht

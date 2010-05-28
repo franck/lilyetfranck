@@ -1,0 +1,23 @@
+<h1><%= t('authlogic.login_title') %></h1>
+
+<% form_for @user_session, :url => user_session_path, :html => { :class => "standard" } do |f| %>
+  <%= f.error_messages %>
+  <ul>
+    <li>
+      <%= f.label :email, t('users.email'), :class => "desc" %>
+      <%= f.text_field :email %>
+    </li>
+    <li>
+      <%= f.label :password, t('users.password'), :class => "desc" %>
+      <%= f.password_field :password %>
+    </li>
+    <li>
+      <div class="col">
+        <span><%= f.check_box :remember_me, :class => "checkbox", :checked => "checked" %><%= f.label :remember_me, t('authlogic.remember_me'), :class => "choice" %></span>
+      </div>
+    </li>
+    <li>
+      <%= f.submit t('authlogic.submit') %>
+    </li>
+  </ul>  
+<% end %>

@@ -1,0 +1,14 @@
+<% title "#{@user.email}" %>
+
+<p>
+  <b><%= t('users.email') %>:</b>
+  <%=h @user.email %>
+</p>
+<p>
+  <b><%= t('users.roles') %>:</b>
+  <%=h @user.roles %>
+</p>
+
+<% if show_admin_or_current_user? %>
+  <%= link_to t('users.edit'), edit_user_path(@user) %>
+<% end %>

@@ -1,0 +1,7 @@
+<% flash.each do |key, value| -%>
+<div id="flash">
+  <% if key == :info or key == :error or key == :notice or key == :resume %>
+    <div id="flash_<%= key %>"><%= value %></div>
+  <% end %>
+</div>
+<% end -%>

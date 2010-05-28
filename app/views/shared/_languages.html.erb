@@ -1,0 +1,5 @@
+<div id="languages">
+  <% I18n.backend.available_locales.reject{|locale| locale == :root }.each do |locale| %>
+    <a href="/<%= locale %>" class="<%= locale %>"><%= locale %></a>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<div id="menu" class="span-32">
+  <ul id="nav">
+    <li><%= link_to t('admin.menu.users'), users_path %></li>
+  </ul>
+  <ul id="toplinks">
+    <li><%= t('admin.toplinks.logged_in_as') %> <%= link_to current_user.email, account_path %></li>
+    <li><%= link_to t('authlogic.logout'), logout_path %></li>
+  </ul>
+</div>

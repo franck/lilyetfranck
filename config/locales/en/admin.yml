@@ -1,0 +1,7 @@
+en:
+  admin:
+    menu:
+      users: Users
+    
+    toplinks:
+      logged_in_as: logged in as

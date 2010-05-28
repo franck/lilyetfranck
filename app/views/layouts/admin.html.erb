@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'screen', 'form', 'admin', 'styles' %>
+    <!--[if IE]>
+    	<link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    
+    <%= render "shared/load_jquery" %>
+    <%= javascript_include_tag 'jquery.form', 'ajaxify', 'application' %>
+    	
+    <%= yield(:headers) %>
+  </head>
+  <body id="admin">
+    <%= render "shared/languages" %>
+    <div class="container">      
+      <%= render "shared/admin/menu" %>
+      <%= render "shared/flashes" %>
+      <%= render "shared/loader" %>
+      
+      <div id="content" class="span-30 prepend-1 append-1">
+      <%- if show_title? -%>
+        <h1><%=h yield(:title) %></h1>
+      <%- end -%>
+        <%= yield %>
+      </div>
+      <div id="footer" class="span-30 prepend-1 append-1">
+        
+      </div>
+    </div>
+  </body>
+</html>

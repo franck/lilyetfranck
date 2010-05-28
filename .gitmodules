@@ -1,0 +1,12 @@
+[submodule "vendor/plugins/languages_switch"]
+	path = vendor/plugins/languages_switch
+	url = git@github.com:franck/languages_switch.git
+[submodule "vendor/plugins/globalize2"]
+	path = vendor/plugins/globalize2
+	url = git://github.com/franck/globalize2.git
+[submodule "vendor/plugins/routing-filter"]
+	path = vendor/plugins/routing-filter
+	url = git://github.com/svenfuchs/routing-filter.git
+[submodule "vendor/plugins/http_accept_language"]
+	path = vendor/plugins/http_accept_language
+	url = git://github.com/iain/http_accept_language.git

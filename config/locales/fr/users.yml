@@ -1,0 +1,78 @@
+fr:
+  users:
+    index_title: Liste des utilisateurs
+    add_title: Ajouter un utilisateur
+    edit_title: "Modifier : {{login}}"
+    crop_title: Recadrer votre photo
+    change_password_title: Changer votre mot de passe
+    
+    page_title:
+      index: Utilisateurs
+      change_password: Changer votre mot de passe
+      password_resets_edit_title: Changer votre mot de passe
+      crop: Recadrer votre photo
+      edit: "Modifier : {{login}}"
+      new: Ajouter un utilisateur
+    
+    roles: Roles  
+    roles_list:
+      admin: admin
+      user: utilisateur
+      
+    actions_title: Actions
+    actions:
+      edit: modifier
+      destroy: supprimer
+      
+    change_password: Modifier votre mot de passe
+    password: Mot de passe
+    password_confirmation: Confirmation du mot de passe
+    submit: Connexion
+    create: Créer
+    update: Mettre à jour
+    change: Change
+    crop: Recadrer
+
+    preview: aperçu
+    
+    search: Rechercher
+    
+    users_list: gérer les recruteurs
+    state: Statut
+    featured: à la une
+    contact: contacter
+    no_result: aucun résultat
+    
+    this_user_is_desactivated: Ce compte est désactivé !
+    
+    edit: modifier
+    add_user: ajouter un utilisateur
+    
+    delete_user: supprimer
+    are_you_sure?: Etes vous sur ?
+    
+    login: Identifiant
+    email: Email
+    name: Nom
+    no_name: Aucun nom
+    firstname: Prénom
+    lastname: Nom
+    phone_numbers: Numéros de téléphone
+    phone: Fixe
+    mobile: Mobile
+    status: Statut
+    avatar: Photo
+    instruct_picture: Vous aurez la possibilité de recadrer la photo
+    
+    flash:
+      
+    error_messages:      
+      new: Impossible de créer l'utilisateur
+      edit: Impossible de modifier l'utilisateur
+      email_length: L'adresse email n'a pas la bonne taille (6 à 100 caractères)
+      email_format: L'adresse email est invalide
+      email_uniqueness: Cet email est déjà dans notre base
+      password_length: La taille du mot de passe est incorrecte (min 4)
+      password_confirmation_length: La taille de la confirmation du mot de passe est incorrecte
+      confirmation_of_password_field: La confirmation du mot de passe ne correspond pas au mot de passe
+      

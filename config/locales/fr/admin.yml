@@ -1,0 +1,7 @@
+fr:
+  admin:
+    menu:
+      users: Utilisateurs
+    
+    toplinks:
+      logged_in_as: connecter en tant que

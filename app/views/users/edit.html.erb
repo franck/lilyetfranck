@@ -1,0 +1,14 @@
+<% title "Editing #{@user.email}" %>
+<% title t('users.page_title.edit', :login => @user.email) %>
+
+<% form_for @user, :html => { :class => "standard" } do |f| %>
+  <%= f.error_messages :header_message => t('users.error_messages.edit') %>
+  <ul>
+  <%= render :partial => "form", :object => f %>
+  <li>
+    <%= f.submit t('users.update') %>
+    <%= link_to t('cancel'), user_path(@user) %>
+  </li>
+  </ul>
+<% end %>
+

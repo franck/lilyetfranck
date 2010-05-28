@@ -1,0 +1,245 @@
+/* =standard form
+-------------------------------------------------*/
+.standard {}
+form.standard {
+  text-align:left;
+  padding:0;
+  margin:0;
+}
+
+form.standard ul {
+  margin:0;padding:0;
+  list-style-type:none;
+}
+form.standard ul li {
+  width:97% !important;
+  background:none;
+  line-height:1em;
+  margin:0.9em 0;padding:0;
+}
+
+form.standard ul li label {
+  margin:0;padding:0;
+}
+form.standard ul li label.desc {
+  border:medium none;
+  color:#222;
+  display:block;
+  font-size:95%;
+  font-weight:bold;
+  line-height:150%;
+  margin:0;padding:0;
+}
+
+form.standard ul li:after, form.standard ul li div:after{
+	content:"."; 
+	display:block;
+	height:0; 
+	clear:both; 
+	visibility:hidden;
+}
+* html form.standard ul li {height: 1%;}
+* html form.standard ul li div {display:inline-block;}
+*+html form.standard ul li div {display:inline-block;}
+
+form.standard ul li div, form.standard ul li span {
+	margin:0 .5em .5em 0;
+	padding:0;
+	color:#444;
+}
+form.standard ul li span.or {
+  margin:0.2em 0.8em 0.2em 0.4em;
+  font-weight:bold;
+  padding:0;
+}
+
+form.standard li div label, form.standard li span label {
+  clear:both;
+  color:#444;
+  display:block;
+  font-size:80%;
+  line-height:10px;
+  margin:0;
+  padding-top:6px;
+}
+form.standard ul li div span label {
+  padding-bottom:12px;
+}
+form.standard li div.fieldWithErrors label {
+  color:#222;
+  display:block;
+  font-size:100%;
+  line-height:150%;
+  margin:0;
+  padding:0;
+}
+
+
+
+form.standard ul li.buttons {
+  width:97% !important;
+}
+
+.standard .buttons {
+  clear:both;
+  margin-top:20px;
+}
+
+
+form.standard ul li span {
+	float:left;
+}
+
+form.standard ul li .mceStatusbar span {
+  float:none;
+}
+form.standard ul li div.fieldWithErrors {
+  margin:0;
+  display:block;
+}
+
+
+.standard .full {
+  width:100% !important;
+}
+
+form.standard ul li div span label.choice {
+  color:#222222;
+  width:88%;
+  display:block;
+  font-size:100%;
+  font-weight:normal;
+  line-height:1.5em;
+  margin:-1.6em 0 0 20px;
+  padding-bottom:0.5em;
+  padding-top:0.44em;
+  padding-left:0;
+  padding-right:0;
+}
+
+form.standard input.checkbox, form.standard input.radio {
+  display:block;
+  height:13px;
+  line-height:1.5em;
+  margin:0.6em 0 0 0px;
+  width:13px;
+}
+form.standard ul li div.col { margin:0; padding:0; }
+form.standard ul li div.col span {
+  display:block;
+  float:left;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+form.standard fieldset {
+  margin:0;
+  padding:1em 0;
+  border:none;
+}
+
+form.standard p {
+  margin:0;
+  line-height:20px;
+}
+form.standard p.instruct {
+  float:left;
+  margin:5px;
+  margin-left:3px;
+  width:100%;
+}
+form.standard .instruct {
+  color:#888;
+  font-size:85%;
+  line-height:1.5em;
+}
+
+form.standard select {
+  margin:0;
+  font-size:1em;
+  height:1.7em;
+}
+
+form.standard input.file {
+  width:auto;
+  padding:3px;
+  margin:0;
+  border: 1px solid #CCC;
+}
+form.standard input.text {
+  width:auto;
+  padding:3px;
+  margin:0;
+  border: 1px solid #CCC;
+}
+form.standard textarea {
+  font-size:1em;
+  font-family:verdana;
+  width:auto;
+  height:auto;
+}
+
+form.standard.with_margin ul li {
+  margin:1em 0;
+}
+
+#counter { }
+.counter_error { color:red; }
+
+/* =errorExplanation
+-------------------------------------------------*/
+#ErrorExplanation,
+#errorExplanation {}
+
+#ErrorExplanation,
+#errorExplanation {
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin: 20px 0;
+	background-color: #f0f0f0;
+}
+
+#ErrorExplanation h2,
+#errorExplanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 30px;
+	font-size: 12px;
+	letter-spacing:1px;
+	margin: -7px;
+	background: url(/images/alertbad_icon.gif) #c00 left no-repeat;
+	color: #fff;
+}
+
+#ErrorExplanation p,
+#errorExplanation p {
+	color: #333;
+	margin: 15px 0 10px 0;
+	font-size:1em;
+	line-height:1.4em;
+}
+
+#ErrorExplanation ul,
+#content form.standard #ErrorExplanation ul,
+#errorExplanation ul {
+	margin: 0 0 10px 0;
+	padding-right:10px;
+	list-style-type: none;
+}
+
+#ErrorExplanation ul li,
+form.standard #ErrorExplanation ul li,
+#content form.standard #ErrorExplanation ul li,
+#errorExplanation ul li {
+  background: url(/images/red_bullet.png) no-repeat 0 0.7em;
+	margin:0 0 0 5px;
+	padding:0.2em;
+  padding-left:1em;
+  line-height:1.4em;
+}
+
+.fieldWithErrors input,
+form.standard .fieldWithErrors input.text { border:2px solid red;}
+.required em { color:red; }

@@ -1,0 +1,113 @@
+en:
+  users:
+    index_title: Manage Users
+    add_title: Add user
+    edit_title: "Edit : {{login}}"
+    crop_title: Crop picture
+    change_password_title: Change password
+    
+    page_title:
+      index: Users
+      change_password: Change password
+      password_resets_edit_title: Change your password
+      crop: Crop picture
+      edit: "Edit : {{login}}"
+      new: Add user
+      all: Manage Users
+
+    roles: Roles
+    roles_list:
+      admin: admin
+      user: user
+      
+    actions_title: Actions
+    actions:
+      edit: edit
+      destroy: destroy
+      
+    email: Email
+    change_password: Change password
+    password: Password
+    password_confirmation: Password Confirmation
+    submit: Submit
+    create: Create
+    update: Update
+    change: Change
+    crop: Crop
+
+    preview: Preview
+    search: Search
+    
+    edit: edit user
+    edit_company: edit company
+    manage_contact: manage contacts
+    manage_events: manage events
+    add_event: add event
+    show_actions:
+      show: show
+      hide: hide
+    show_actions?: User settings
+    add: add member
+    
+    action_buttons:
+      show: View member
+      contact: Contact
+    
+    edit_in:
+      fr: edit user in french
+      en: edit user in english
+      de: edit user in deutsch
+    
+    editing_in:
+      fr: Editing the french version of your profil.
+      en: Editing the english version of your profil.
+      de: Editing the deutsch version if your profil.
+      
+    flag_instruct: Your user can be translated. Fields with a flag should be translated. If you 
+    
+    index_title: Members
+    add_title: Add a member
+    edit_title: Editing your user
+    crop_title: Crop your picture
+    change_password_title: Changing your password
+    
+    page_title:
+      index: Members of the french german network
+      change_password: Changing your password
+      password_resets_edit_title: Changing your password
+      crop: Croping your picture
+      edit: Editing your user
+      new: Adding a member
+    
+    login: Login
+    name: Name
+    no_name: No name
+    firstname: Firstname
+    lastname: Lastname
+    phone_numbers: Phone numbers
+    phone: Phone
+    mobile: Mobile
+    fax: Fax
+    jobtitle: Job Title
+    status: State
+    description: Introduce yourself briefly
+    remain: remain
+    characters: characters
+    avatar: Picture
+    instruct_picture: You will be able to crop the picture
+    
+    category: Status
+    categories:
+      employee: Employee
+      partner: Partner
+      associate: Associate
+      freelance: Freelance
+      owner: Owner
+    
+    flash:
+      member_added: Member added
+      user_updated: "Successfully updated user."
+      
+    error_messages:
+      firstname_presence: Firstname can't be blank
+      lastname_presence: Lastname can't be blank

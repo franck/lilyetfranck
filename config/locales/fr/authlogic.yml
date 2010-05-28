@@ -1,0 +1,63 @@
+fr:
+  #=authlogic
+  authlogic:
+    page_title:
+      new: login
+      
+    login_title: Identification
+    
+    account: Compte
+    login: "s'identifier"
+    logout: se déconnecter
+    login_page_title: S'identifier
+    change_password: changer votre mot de passe
+    remember_me: se souvenir de moi
+    submit: Se connecter
+    
+    password_resets:
+      forgot_your_password: "Mot de passe oublié ?"
+      submit : "Réinitialiser le mot de passe"
+      update_my_password: "Actualiser le mot de passe et se connecter"
+      new_title: Réinitialiser votre mot de passe
+      new_intro: Veuillez remplir le champ ci-dessous pour réinitialiser le mot de passe qui vous sera ainsi envoyé à votre e-mail.  
+      edit_title: Modifier votre mot de passe
+      reset_password_instruct_before_link: Nous avons reçu une demande de réinitialisation de votre mot de passe. Si vous n'avez pas initié cette demande, ignorez simplement cet email. Si vous avez fait cette demande, cliquez sur le lien ci-dessous.
+      reset_password_instruct_after_link: Si le lien ci-dessus ne fonctionne pas, essayez de le copier-coller dans le champ adresse de votre navigateur. Si le problème persiste, n'hésitez pas à nous contacter.
+      reset_password_instruct_title: Demande de changement de mot de passe
+    
+    notifier:
+      password_reset:
+        subject: Instruction pour réinitialiser votre mot de passe
+    
+    flash:
+      require_no_user: "Vous devez vous déconnecter pour avoir accès à cette page"
+      require_user: "Vous devez être connecté pour avoir accès à cette page"
+      login: Vous êtes connecté
+      logout: Vous êtes déconnecté
+      access_denied: Accès refusé
+      password_reset_instructions: Une instruction pour réinitialiser votre mot de passe vous a été envoyée par e-mail. Veuillez vérifier votre boîte mail.
+      password_reset_no_user: Cet e-mail est inconnu
+      password_reset_updated: "Modification de mot de passe effectuée"
+      password_reset_no_token: "Votre compte n'a pas été trouvé. En cas de difficulté, veuillez copier le lien affiché dans votre e-mail et l'intégrer dans votre navigateur ou réinitialiser à nouveau votre mot de passe."
+      password_reset_no_user: "Cet email ne correspond a aucun compte"
+      
+    
+    error_messages:
+      login_header_message: Connexion impossible
+      login_blank: Le champ du login n'a pas le droit d'être vide.
+      login_not_found: Cet e-mail n'est pas dans notre base de données.
+      login_invalid: login non valide
+      consecutive_failed_logins_limit_exceeded:  Nombre maximum d'essaies atteint. Le compte a été désactivé.
+      email_invalid: e-mail non valide
+      password_blank: Le champ du mot de passe n'a pas le droit d'être vide
+      password_invalid: mot de passe non valide
+      not_active: votre compte n'est pas activé
+      not_confirmed: votre compte n'est pas validé
+      not_approved: votre compte n'est pas activé
+      no_authentication_details: Il manque l'email et le mot de passe
+      password_length: Le mot de passe est trop court
+      email_length: Taille de l'e-mail non valide  (6 signes min. ; 100 min.)
+      email_format: Format de l'e-mail non valide
+      email_uniqueness: Cet e-mail existe déjà dans notre base de données.
+      password_confirmation_length: Confirmation du mot de passe non valide
+      confirmation_of_password_field: Confirmation du mot de passe ne correspond pas à votre mot de passe

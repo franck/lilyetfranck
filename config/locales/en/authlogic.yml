@@ -1,0 +1,58 @@
+en:
+  #=authlogic
+  authlogic:
+    page_title:
+      new: Login
+      
+    login_title: Login
+    
+    account: account
+    login: login
+    logout: logout
+    login_page_title: Login
+    change_password: change password
+    remember_me: remember me
+    submit: Login
+    
+    password_resets:
+      forgot_your_password: "forgot your password ?"
+      submit : "Reset my password"
+      update_my_password: "Update my password and log me in"
+      new_title: Reset your password
+      new_intro: Fill out the form below and instructions to reset your password will be emailed to you.  
+      edit_title: Change your password
+    
+    notifier:
+      password_reset:
+        subject: Password Reset Instructions
+    
+    flash:
+      require_no_user: "You must be logged out to access this page"
+      require_user: "You must be logged in to access this page"
+      login: You are now logged in
+      logout: You are now logged out
+      access_denied: Access denied
+      password_reset_instructions: Instructions to reset your password have been emailed to you. Please check your email.
+      password_reset_no_user: No user was found with that email address
+      password_reset_updated: "Password successfully updated"
+      password_reset_no_token: "We're sorry, but we could not locate your account. If you are having issues try copying and pasting the URL from your email into your browser or restarting the reset password process."
+      
+    
+    error_messages:
+      login_blank: Your login should not be blank
+      login_not_found: This email is not in our database
+      login_invalid: Login is invalid
+      consecutive_failed_logins_limit_exceeded: Maximum try reached. Account desactivated
+      email_invalid: Email is invalid
+      password_blank: Password should not be blank
+      password_invalid: Password is invalid
+      not_active: Your account is not activated
+      not_confirmed: Your account is not confirmed 
+      not_approved: Your account is not approved
+      no_authentication_details: Authentication details are missing
+      password_length: Password is too short
+      email_length: Email length is wrong (min 6 char; maximum 100)
+      email_format: Email format is invalid
+      email_uniqueness: This email is already in our database
+      password_confirmation_length: Password confirmation is invalid
+      confirmation_of_password_field: Password confirmation does not correspond to password
