@@ -1,3 +1,6 @@
+ENV['GEM_HOME'] = "#{ENV['HOME']}/.gem"
+ENV['GEM_PATH'] = "#{ENV['HOME']}/.gem:/usr/lib/ruby/gems/1.8"
+
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
