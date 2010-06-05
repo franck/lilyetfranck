@@ -24,8 +24,8 @@ staging:
 
 production:
   adapter: mysql
-  database: lilyetfranck_production
-  username:
-  password:
-  host: localhost
+  database: lilyetfranck
+  username: barouf
+  password: thibamay
+  host: mysql.lilyetfranck.com
   encoding: utf8
