@@ -1,0 +1,6 @@
+<Location />
+  AuthName "Ce site est protégé par mot de passe"
+  AuthType Basic
+  AuthUserFile /home/barouf/.htpasswd
+  Require valid-user
+</Location>
