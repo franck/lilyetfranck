@@ -1,0 +1,7 @@
+%h2 Ajouter un album
+
+- form_for @album do |f|
+  =f.label :photoset_id, 'Photoset ID', :class => "required"
+  =f.text_field :photoset_id
+  =f.submit 'Ok'
+  =link_to 'annuler', albums_path

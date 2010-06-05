@@ -1,13 +1,243 @@
-/* =flash
--------------------------------------------------*/
-#flash { float:left; width:100%; margin:10px 0; }
-#flash_notice { margin:10px 20px; padding:1em; border:2px solid #6C6; background-color:#CFC; color:#444; }
-#flash_error { margin:1em; padding:1em; border:2px solid #900; background-color:#EBCCCC; color:#900; }
+body {
+  background-color: #eeeeee;
+  font-family: "arial"; }
 
-/* =pagination
--------------------------------------------------*/
-.pagination { margin:10px 0;}
-
-/* =loader
--------------------------------------------------*/
-.loader { width:50px; height:50px; position:fixed; top:30%; left:48%; background: url(/images/ajax-loader.gif) #FFF center no-repeat; border:4px solid #900; display:none; }
+#public {
+  font-size: 0.9em;
+  color: #333333;
+  /* WHILE HOVERED */ }
+  #public h1, #public h2, #public h3, #public h4 {
+    font-family: "IM Fell Double Pica SC", arial, serif;
+    color: #666666; }
+    #public h1 a, #public h2 a, #public h3 a, #public h4 a {
+      text-decoration: none; }
+  #public h2 {
+    font-size: 24px;
+    margin-bottom: 12px; }
+  #public a {
+    color: #666666; }
+  #public .button {
+    float: left;
+    margin-right: 10px;
+    padding: 6px 12px;
+    width: auto;
+    height: auto;
+    line-height: auto;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    position: relative;
+    /* BACKGROUND GRADIENTS */
+    background: #014464;
+    background: -moz-linear-gradient(top, #0c5f85, #0b5273 50%, #024869 51%, #003853);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c5f85), color-stop(0.5, #0b5273), color-stop(0.51, #024869), to(#003853));
+    /* BORDER RADIUS */
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #eeeeee;
+    /* TEXT SHADOW */
+    /* BOX SHADOW */
+    -moz-box-shadow: 0 1px 3px black;
+    -webkit-box-shadow: 0 1px 3px black;
+    box-shadow: 0 1px 3px black; }
+  #public .button:hover {
+    background: #014464;
+    background: -moz-linear-gradient(top, #0c5f85, #0b5273 50%, #024869 51%, #003853);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c5f85), color-stop(0.5, #0b5273), color-stop(0.51, #024869), to(#003853));
+    /* WHILE BEING CLICKED */ }
+  #public .button:active {
+    -moz-box-shadow: 0 2px 6px black;
+    -webkit-box-shadow: 0 2px 6px black; }
+  #public #header h1 {
+    font-size: 24px; }
+    #public #header h1 a {
+      text-decoration: none;
+      color: #666666; }
+  #public #content {
+    position: relative;
+    float: left;
+    width: 960px;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-box-shadow: 0px 0px 4px #333333;
+    -webkit-box-shadow: 0px 0px 4px #333333;
+    box-shadow: 0px 0px 4px #333333; }
+  #public #top {
+    float: left;
+    padding: 0 20px;
+    width: 920px; }
+    #public #top h1 {
+      font-family: "IM Fell Double Pica SC", arial, serif;
+      color: #666666;
+      font-size: 36px;
+      margin-bottom: 15px; }
+      #public #top h1 a {
+        text-decoration: none;
+        color: #666666; }
+    #public #top #nav {
+      float: left;
+      margin-bottom: 15px;
+      width: 100%; }
+      #public #top #nav ul {
+        float: left;
+        list-style: none;
+        margin: 0; }
+        #public #top #nav ul li {
+          float: left;
+          padding: 10px 20px 10px 0; }
+          #public #top #nav ul li a {
+            text-decoration: none;
+            font-size: 22px;
+            font-family: "IM Fell Double Pica SC", arial, serif;
+            border-bottom: 3px solid #666666;
+            -webkit-transition: border 0.3s ease-out;
+            -moz-transition-property: border 0.3s ease-out;
+            -o-transition: border 0.3s ease-out; }
+          #public #top #nav ul li a:hover {
+            border-bottom: 30px solid #666666; }
+  #public #intro {
+    float: left;
+    width: 920px;
+    height: 90px;
+    margin: 0 0 20px 0;
+    padding: 15px 20px;
+    background: -moz-linear-gradient(top, #333333, #eeeeee);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.005, white), color-stop(0.01, #dedede), color-stop(0.99, #eeeeee), color-stop(0.995, white), to(white));
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd; }
+    #public #intro p {
+      max-width: 400px; }
+  #public #top_photos {
+    position: absolute;
+    top: 50px;
+    left: 440px;
+    width: auto;
+    margin: 0; }
+    #public #top_photos li {
+      list-style: none;
+      float: left;
+      padding: 0 15px 10px 0;
+      margin: 0px; }
+      #public #top_photos li img {
+        float: left;
+        background: white;
+        border: 1px solid #aaaaaa;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-box-shadow: 0px 0px 2px #aaaaaa;
+        -webkit-box-shadow: 0px 0px 2px #aaaaaa;
+        box-shadow: 0px 0px 2px #aaaaaa;
+        -webkit-transform: rotate(-5deg);
+        padding: 10px; }
+      #public #top_photos li .first {
+        width: 160px;
+        -moz-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        margin-right: -40px;
+        margin-top: 40px;
+        z-index: 3; }
+      #public #top_photos li .second {
+        width: 180px;
+        -moz-transform: rotate(2deg);
+        -webkit-transform: rotate(2deg);
+        -o-transform: rotate(2deg);
+        z-index: 2; }
+      #public #top_photos li .third {
+        width: 140px;
+        -moz-transform: rotate(-2deg);
+        -webkit-transform: rotate(-2deg);
+        -o-transform: rotate(-2deg);
+        margin-left: -40px;
+        margin-top: 40px;
+        z-index: 3; }
+  #public #middle {
+    float: left;
+    padding: 10px 20px 0px 20px;
+    width: 920px;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee; }
+  #public #sidebar {
+    margin-top: 50px;
+    float: right;
+    width: 300px;
+    padding: 15px 20px; }
+  #public #main {
+    float: left;
+    width: 580px;
+    padding: 15px 20px; }
+    #public #main h2 a {
+      color: #333333; }
+  #public #albums .album {
+    clear: left;
+    float: left;
+    margin-bottom: 15px; }
+    #public #albums .album .photo {
+      float: left;
+      margin: 0 10px 10px 0;
+      padding: 3px;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-box-shadow: 0px 0px 2px #333333;
+      -webkit-box-shadow: 0px 0px 2px #333333;
+      box-shadow: 0px 0px 2px #333333; }
+      #public #albums .album .photo a {
+        float: left;
+        margin: 0;
+        padding: 0; }
+        #public #albums .album .photo a img {
+          float: left;
+          margin: 0;
+          padding: 0; }
+  #public #pics {
+    float: left;
+    width: 100%; }
+    #public #pics img {
+      width: 80px; }
+    #public #pics a {
+      border: 2px solid #eeeeee;
+      padding: 2px;
+      display: block;
+      float: left;
+      margin: 0 10px 10px 0; }
+    #public #pics a:hover {
+      border: 2px solid #aaaaaa; }
+  #public #gifts {
+    float: left;
+    width: 540px;
+    margin-bottom: 20px; }
+    #public #gifts .gift {
+      float: left;
+      width: 540px;
+      margin-bottom: 15px; }
+      #public #gifts .gift .pic img {
+        float: left;
+        width: 80px;
+        margin-right: 15px; }
+      #public #gifts .gift .gift_description {
+        float: left;
+        width: 445px; }
+        #public #gifts .gift .gift_description h3 {
+          float: left;
+          width: 445px;
+          margin: 5px 0 10px 0; }
+        #public #gifts .gift .gift_description .description {
+          float: left;
+          width: 445px; }
+          #public #gifts .gift .gift_description .description p {
+            margin-bottom: 10px; }
+        #public #gifts .gift .gift_description .price {
+          font-size: 0.9em;
+          float: left;
+          color: #666666; }

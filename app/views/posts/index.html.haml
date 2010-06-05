@@ -1,0 +1,7 @@
+- @posts.each do |post|
+  %h2= link_to post.title, post
+  =textilize(post.content)
+
+.clear  
+  - if show_admin?
+    = link_to "ajouter un article", new_post_path, :class => "button"

@@ -7,6 +7,3 @@
 [submodule "vendor/plugins/routing-filter"]
 	path = vendor/plugins/routing-filter
 	url = git://github.com/svenfuchs/routing-filter.git
-[submodule "vendor/plugins/http_accept_language"]
-	path = vendor/plugins/http_accept_language
-	url = git://github.com/iain/http_accept_language.git

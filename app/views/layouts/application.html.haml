@@ -1,0 +1,38 @@
+!!! 5
+%html
+  %head
+    %title Lily et Franck
+    =stylesheet_link_tag "reste", "screen", "styles", "form", "colorbox"
+    %link{:href => 'http://fonts.googleapis.com/css?family=IM+Fell+Double+Pica+SC', :rel => 'stylesheet', :type => 'text/css'}
+    =javascript_include_tag :defaults, "jquery.colorbox-min"
+    =yield(:head)
+  %body#public
+    .container
+      #header
+        %h1 
+          %a{:href => "/" } Lily, Franck et ...
+      #content
+        #top
+          %h1 
+            %a{:href => "/" } Notre petite crevette !
+          
+          #nav
+            %ul
+              %li= link_to 'Blog', root_url
+              %li= link_to 'Photos', albums_url
+              %li= link_to 'Cadeaux', gifts_url
+          
+        #intro
+          %p Bienvenue sur le site de notre petite crevette !
+            
+        =render(:partial => "/shared/gallery" )
+        
+        #main
+          =yield
+        #sidebar
+          =yield(:sidebar)
+          
+      #footer
+
+  =yield(:foot)
+      

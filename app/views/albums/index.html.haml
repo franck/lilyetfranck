@@ -1,0 +1,25 @@
+%h2 Notre album photos
+
+#albums
+  - @albums.each do |album|
+    .album
+      %h3= link_to album.photoset_info["title"], album
+      - album.photos.each do |photo|
+        .photo
+          %a{ :href => "#{photo['url_m']}", :rel => "album-#{album.id}" }
+            %img{ :src => "#{photo['url_sq']}", :class => "sq" }
+
+.clear 
+  - if show_admin?
+    =link_to "ajouter un album", new_album_path, :class => "button"
+  
+
+
+-content_for(:foot) do
+  %script{ :type => "text/javascript", :charset => "utf-8" }
+    :erb
+      $(function() {
+        <% for album in @albums %>
+          $("a[rel='album-<%= album.id %>']").colorbox({current:'{current} sur {total}'});
+        <% end %>
+      });

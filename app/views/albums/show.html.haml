@@ -1,0 +1,22 @@
+%h2= @album.photoset_info["title"]
+
+#albums
+  .album
+    - @album.photos.each do |photo|
+      .photo
+        %a{ :href => "#{photo['url_m']}", :rel => "album-#{@album.id}" }
+          %img{ :src => "#{photo['url_sq']}", :class => "sq" }
+          
+-content_for(:sidebar) do
+  - if show_admin?
+    =link_to "modifier l'album", edit_album_path, :class => "button"
+    =link_to "supprimer l'album", album_path, :class => "button", :method => :delete
+          
+
+          
+-content_for(:foot) do
+  %script{ :type => "text/javascript", :charset => "utf-8" }
+    :erb
+      $(function() {
+        $("a[rel='album-<%= @album.id %>']").colorbox({current:'{current} sur {total}'});
+      });

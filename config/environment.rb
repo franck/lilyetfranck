@@ -11,6 +11,15 @@ Rails::Initializer.run do |config|
   config.gem 'will_paginate', :source => 'http://gemcutter.org', :version => '~> 2.3.11'
   config.gem 'acl9', :lib => 'acl9', :source => 'http://gemcutter.org'
   config.gem 'authlogic'
+  
+  config.gem 'haml'
+  config.gem 'will_paginate'
+  config.gem 'http_accept_language'
+  config.gem 'flickraw'
+  config.gem 'RedCloth'
+  config.gem 'searchlogic'
+  config.gem "nokogiri"
+  
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.

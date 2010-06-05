@@ -1,0 +1,8 @@
+%h2=h @post.title
+
+= textilize(@post.content)
+
+-content_for(:sidebar) do
+  - if show_admin?
+    =link_to "modifier ce post", edit_post_path(@post), :class => "button"
+  

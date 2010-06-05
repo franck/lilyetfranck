@@ -1,0 +1,10 @@
+%h2 Ajouter un post
+
+- form_for @post, :html => { :class => "standard" }  do |f|
+  = f.error_messages
+  %ul
+    =render(:partial => "form", :locals => { :f => f })
+    %li
+      =f.submit 'Ajouter'
+  
+  

@@ -1,0 +1,6 @@
+%h2 Choisir la photo du cadeau
+
+#pics
+  -for pic in @pics
+    %a{ :href => "#{update_pic_gift_path(@gift, :pic => CGI::escape(pic))}" }
+      %img{ :src => "#{pic}" }

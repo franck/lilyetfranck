@@ -204,6 +204,7 @@ form.standard.with_margin ul li {
 #ErrorExplanation h2,
 #errorExplanation h2 {
 	text-align: left;
+	font-family: arial;
 	font-weight: bold;
 	padding: 5px 5px 5px 30px;
 	font-size: 12px;

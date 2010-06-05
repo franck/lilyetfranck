@@ -1,0 +1,26 @@
+%h2 Liste de cadeaux
+
+%p Si vous ne savez pas quoi nous offrir, voici une liste de choses qui nous manque encore.
+
+#gifts
+  -for gift in @gifts
+    .gift
+      
+      .pic
+        %a{ :href => gift.link }
+          %img{:src => gift.pic }
+      
+      .gift_description
+        %h3= link_to gift.name, gift.link
+        .description
+          = textilize(gift.description)
+        .price
+          prix approx.
+          = gift.price
+          €
+
+.clear
+- if show_admin?
+  =link_to "ajouter un cadeau", new_gift_path, :class => "button"
+  
+  

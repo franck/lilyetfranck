@@ -12,9 +12,18 @@ class ApplicationController < ActionController::Base
 
   private
   
-  def default_url_options(options={})  
-    { :locale => I18n.locale }
+  # PUBLIC
+  
+  def get_top_page_photos
+    @top_photos = Album.random(3)
+    #@top_photos = flickr.photosets.getPhotos(:photoset_id => "72157624153769016", :extras => "tags, url_sq")
   end
+  
+  # ADMIN
+  
+  # def default_url_options(options={})  
+  #     { :locale => I18n.locale }
+  #   end
   
   def access_denied
     flash[:error] = t('authlogic.flash.access_denied')

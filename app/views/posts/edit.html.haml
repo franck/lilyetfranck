@@ -1,0 +1,9 @@
+%h2 Modifier le post
+
+- form_for @post, :html => { :class => "standard" }  do |f|
+  = f.error_messages
+  %ul
+    =render(:partial => "form", :locals => { :f => f })
+    %li
+      =f.submit 'Modifier'
+      =link_to 'annuler', @post

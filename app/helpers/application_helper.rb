@@ -7,6 +7,10 @@ module ApplicationHelper
     allow "user", :if => :user_is_current_user?
   end
   
+  access_control :show_admin? do
+    allow "admin"
+  end
+  
   def js(data)
     if data.respond_to? :to_json
       data.to_json
