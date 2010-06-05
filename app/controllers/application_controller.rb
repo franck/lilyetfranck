@@ -9,8 +9,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
+  
+  before_filter :authenticate
 
   private
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "crevette" && password == "crevette"
+    end
+  end
   
   # PUBLIC
   
