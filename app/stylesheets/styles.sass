@@ -143,12 +143,12 @@ body
       
       height: 90px
       margin: 0 0 20px 0
-      padding: 15px 0
+      padding: 20px 0 0 0
       background: -moz-linear-gradient(top, #333, #EEE)
       background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(0.005, #FFF), color-stop(0.01, #DEDEDE), color-stop(0.990, #EEE), color-stop(0.995, #FFF), to(#FFF))
       border-top: 1px solid #DDD
       border-bottom: 1px solid #DDD
-      
+      color: #666
       p
         max-width: 40%
         margin-left: $blueprint_liquid_grid_width + $blueprint_liquid_grid_margin
@@ -207,7 +207,6 @@ body
         @include column(16)
         @include prepend(1)
         @include append(1)
-        background: pink
             
       #sidebar
         @include column(5)
