@@ -1,7 +1,8 @@
-%ul#top_photos
-  %li
-    %img{:src => "#{@top_photos[0]["url_m"]}", :class => "first" }
-  %li
-    %img{:src => "#{@top_photos[1]["url_m"]}", :class => "second"}
-  %li
-    %img{:src => "#{@top_photos[2]["url_m"]}", :class => "third"}
+- if @top_photos
+  %ul#top_photos
+    %li
+      %img{:src => "#{@top_photos[0]["url_m"]}", :class => "first" }
+    %li
+      %img{:src => "#{@top_photos[1]["url_m"]}", :class => "second"}
+    %li
+      %img{:src => "#{@top_photos[2]["url_m"]}", :class => "third"}

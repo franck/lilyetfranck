@@ -9,9 +9,9 @@
           %a{ :href => "#{photo['url_m']}", :rel => "album-#{album.id}" }
             %img{ :src => "#{photo['url_sq']}", :class => "sq" }
 
-.clear 
-  - if show_admin?
-    =link_to "ajouter un album", new_album_path, :class => "button"
+
+- if show_admin?
+  =link_to "ajouter un album", new_album_path, :class => "button clear"
   
 
 
