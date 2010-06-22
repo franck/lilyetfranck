@@ -32,6 +32,8 @@ body
     color: #666
     a
       text-decoration: none
+    a:hover
+      color: #333
 
   h2
     font-size: 1.4em
@@ -147,6 +149,7 @@ body
       height: 90px
       margin: 0 0 20px 0
       padding: 20px 0 0 0
+      background: #EEE
       background: -moz-linear-gradient(top, #333, #EEE)
       background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(0.005, #FFF), color-stop(0.01, #DEDEDE), color-stop(0.990, #EEE), color-stop(0.995, #FFF), to(#FFF))
       border-top: 1px solid #DDD
@@ -215,6 +218,7 @@ body
         @include column(5)
         @include append(1)
         @include last
+        padding-top: 50px
     
       //+border-radius(12px)
       //+shadow(#333, 4px)
@@ -290,3 +294,6 @@ body
           .price
             font-size: 0.9em
             color: #666
+  #main
+    h2
+      margin-bottom: 0.5em

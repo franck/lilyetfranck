@@ -23,25 +23,29 @@ body {
 #public h1 a, #public h2 a, #public h3 a, #public h4 a {
   text-decoration: none;
 }
-/* line 36, ../../../app/stylesheets/styles.sass */
+/* line 35, ../../../app/stylesheets/styles.sass */
+#public h1 a:hover, #public h2 a:hover, #public h3 a:hover, #public h4 a:hover {
+  color: #333333;
+}
+/* line 38, ../../../app/stylesheets/styles.sass */
 #public h2 {
   font-size: 1.4em;
   margin-bottom: 1.4em;
 }
-/* line 40, ../../../app/stylesheets/styles.sass */
+/* line 42, ../../../app/stylesheets/styles.sass */
 #public h3 {
   font-size: 1.2em;
   margin-bottom: 1.2em;
 }
-/* line 44, ../../../app/stylesheets/styles.sass */
+/* line 46, ../../../app/stylesheets/styles.sass */
 #public a {
   color: #666666;
 }
-/* line 47, ../../../app/stylesheets/styles.sass */
+/* line 49, ../../../app/stylesheets/styles.sass */
 #public p {
   margin-bottom: 15px;
 }
-/* line 51, ../../../app/stylesheets/styles.sass */
+/* line 53, ../../../app/stylesheets/styles.sass */
 #public .button {
   float: left;
   margin-right: 10px;
@@ -72,7 +76,7 @@ body {
   -webkit-box-shadow: 0 1px 3px black;
   box-shadow: 0 1px 3px black;
 }
-/* line 87, ../../../app/stylesheets/styles.sass */
+/* line 89, ../../../app/stylesheets/styles.sass */
 #public .container {
   min-width: 950px;
   width: 80%;
@@ -86,7 +90,7 @@ body {
 #public .container {
   display: block;
 }
-/* line 92, ../../../app/stylesheets/styles.sass */
+/* line 94, ../../../app/stylesheets/styles.sass */
 #public .container #header {
   display: inline;
   float: left;
@@ -95,16 +99,16 @@ body {
   margin-right: 1.042%;
   margin-top: 12px;
 }
-/* line 95, ../../../app/stylesheets/styles.sass */
+/* line 97, ../../../app/stylesheets/styles.sass */
 #public .container #header h1 {
   font-size: 24px;
 }
-/* line 97, ../../../app/stylesheets/styles.sass */
+/* line 99, ../../../app/stylesheets/styles.sass */
 #public .container #header h1 a {
   text-decoration: none;
   color: #666666;
 }
-/* line 101, ../../../app/stylesheets/styles.sass */
+/* line 103, ../../../app/stylesheets/styles.sass */
 #public .container #top {
   display: inline;
   float: left;
@@ -116,36 +120,36 @@ body {
   margin-right: 0;
   margin-top: 10px;
 }
-/* line 108, ../../../app/stylesheets/styles.sass */
+/* line 110, ../../../app/stylesheets/styles.sass */
 #public .container #top h1 {
   font-family: "IM Fell Double Pica SC", arial, serif;
   color: #666666;
   font-size: 36px;
   margin-bottom: 15px;
 }
-/* line 115, ../../../app/stylesheets/styles.sass */
+/* line 117, ../../../app/stylesheets/styles.sass */
 #public .container #top h1 a {
   text-decoration: none;
   color: #666666;
 }
-/* line 119, ../../../app/stylesheets/styles.sass */
+/* line 121, ../../../app/stylesheets/styles.sass */
 #public .container #top #nav {
   float: left;
   margin-bottom: 15px;
   width: 100%;
 }
-/* line 123, ../../../app/stylesheets/styles.sass */
+/* line 125, ../../../app/stylesheets/styles.sass */
 #public .container #top #nav ul {
   float: left;
   list-style: none;
   margin: 0;
 }
-/* line 128, ../../../app/stylesheets/styles.sass */
+/* line 130, ../../../app/stylesheets/styles.sass */
 #public .container #top #nav ul li {
   float: left;
   padding: 10px 20px 10px 0;
 }
-/* line 132, ../../../app/stylesheets/styles.sass */
+/* line 134, ../../../app/stylesheets/styles.sass */
 #public .container #top #nav ul li a {
   text-decoration: none;
   font-size: 22px;
@@ -155,11 +159,11 @@ body {
   -moz-transition-property: border 0.3s ease-out;
   -o-transition: border 0.3s ease-out;
 }
-/* line 140, ../../../app/stylesheets/styles.sass */
+/* line 142, ../../../app/stylesheets/styles.sass */
 #public .container #top #nav ul li a:hover {
   border-bottom: 10px solid #666666;
 }
-/* line 143, ../../../app/stylesheets/styles.sass */
+/* line 145, ../../../app/stylesheets/styles.sass */
 #public .container #intro {
   display: inline;
   float: left;
@@ -170,18 +174,19 @@ body {
   height: 90px;
   margin: 0 0 20px 0;
   padding: 20px 0 0 0;
+  background: #eeeeee;
   background: -moz-linear-gradient(top, #333333, #eeeeee);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.005, white), color-stop(0.01, #dedede), color-stop(0.99, #eeeeee), color-stop(0.995, white), to(white));
   border-top: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
   color: #666666;
 }
-/* line 155, ../../../app/stylesheets/styles.sass */
+/* line 158, ../../../app/stylesheets/styles.sass */
 #public .container #intro p {
   max-width: 40%;
   margin-left: 4.209%;
 }
-/* line 159, ../../../app/stylesheets/styles.sass */
+/* line 162, ../../../app/stylesheets/styles.sass */
 #public .container #top_photos {
   position: absolute;
   top: 60px;
@@ -189,14 +194,14 @@ body {
   width: auto;
   margin: 0;
 }
-/* line 166, ../../../app/stylesheets/styles.sass */
+/* line 169, ../../../app/stylesheets/styles.sass */
 #public .container #top_photos li {
   list-style: none;
   float: left;
   padding: 0 15px 10px 0;
   margin: 0px;
 }
-/* line 172, ../../../app/stylesheets/styles.sass */
+/* line 175, ../../../app/stylesheets/styles.sass */
 #public .container #top_photos li img {
   float: left;
   background: white;
@@ -214,7 +219,7 @@ body {
   -webkit-transform: rotate(-5deg);
   padding: 10px;
 }
-/* line 182, ../../../app/stylesheets/styles.sass */
+/* line 185, ../../../app/stylesheets/styles.sass */
 #public .container #top_photos li .first {
   width: 160px;
   -moz-transform: rotate(-5deg);
@@ -225,7 +230,7 @@ body {
   margin-top: 40px;
   z-index: 3;
 }
-/* line 188, ../../../app/stylesheets/styles.sass */
+/* line 191, ../../../app/stylesheets/styles.sass */
 #public .container #top_photos li .second {
   width: 180px;
   -moz-transform: rotate(2deg);
@@ -234,7 +239,7 @@ body {
   transform: rotate(2deg);
   z-index: 2;
 }
-/* line 192, ../../../app/stylesheets/styles.sass */
+/* line 195, ../../../app/stylesheets/styles.sass */
 #public .container #top_photos li .third {
   width: 140px;
   -moz-transform: rotate(-2deg);
@@ -245,7 +250,7 @@ body {
   margin-top: 40px;
   z-index: 3;
 }
-/* line 199, ../../../app/stylesheets/styles.sass */
+/* line 202, ../../../app/stylesheets/styles.sass */
 #public .container #content {
   display: inline;
   float: left;
@@ -267,7 +272,7 @@ body {
   -o-box-shadow: #666666 1px 1px 5px;
   box-shadow: #666666 1px 1px 5px;
 }
-/* line 209, ../../../app/stylesheets/styles.sass */
+/* line 212, ../../../app/stylesheets/styles.sass */
 #public .container #content #main {
   display: inline;
   float: left;
@@ -277,7 +282,7 @@ body {
   padding-left: 4.209%;
   padding-right: 4.209%;
 }
-/* line 214, ../../../app/stylesheets/styles.sass */
+/* line 217, ../../../app/stylesheets/styles.sass */
 #public .container #content #sidebar {
   display: inline;
   float: left;
@@ -286,8 +291,9 @@ body {
   margin-right: 1.042%;
   padding-right: 4.209%;
   margin-right: 0;
+  padding-top: 50px;
 }
-/* line 222, ../../../app/stylesheets/styles.sass */
+/* line 226, ../../../app/stylesheets/styles.sass */
 #public .container #footer {
   display: inline;
   float: left;
@@ -295,13 +301,13 @@ body {
   width: 99.974%;
   margin-right: 1.042%;
 }
-/* line 226, ../../../app/stylesheets/styles.sass */
+/* line 230, ../../../app/stylesheets/styles.sass */
 #public .container #albums .album {
   clear: left;
   float: left;
   margin-bottom: 15px;
 }
-/* line 230, ../../../app/stylesheets/styles.sass */
+/* line 234, ../../../app/stylesheets/styles.sass */
 #public .container #albums .album .photo {
   float: left;
   margin: 0 10px 10px 0;
@@ -316,19 +322,19 @@ body {
   -webkit-box-shadow: 0px 0px 2px #333333;
   box-shadow: 0px 0px 2px #333333;
 }
-/* line 237, ../../../app/stylesheets/styles.sass */
+/* line 241, ../../../app/stylesheets/styles.sass */
 #public .container #albums .album .photo a {
   float: left;
   margin: 0;
   padding: 0;
 }
-/* line 242, ../../../app/stylesheets/styles.sass */
+/* line 246, ../../../app/stylesheets/styles.sass */
 #public .container #albums .album .photo a img {
   float: left;
   margin: 0;
   padding: 0;
 }
-/* line 247, ../../../app/stylesheets/styles.sass */
+/* line 251, ../../../app/stylesheets/styles.sass */
 #public .container #pics {
   display: inline;
   float: left;
@@ -338,11 +344,11 @@ body {
   padding-left: 4.209%;
   padding-right: 4.209%;
 }
-/* line 252, ../../../app/stylesheets/styles.sass */
+/* line 256, ../../../app/stylesheets/styles.sass */
 #public .container #pics img {
   width: 80px;
 }
-/* line 254, ../../../app/stylesheets/styles.sass */
+/* line 258, ../../../app/stylesheets/styles.sass */
 #public .container #pics a {
   border: 2px solid #eeeeee;
   padding: 2px;
@@ -350,11 +356,11 @@ body {
   float: left;
   margin: 0 10px 10px 0;
 }
-/* line 260, ../../../app/stylesheets/styles.sass */
+/* line 264, ../../../app/stylesheets/styles.sass */
 #public .container #pics a:hover {
   border: 2px solid #aaaaaa;
 }
-/* line 263, ../../../app/stylesheets/styles.sass */
+/* line 267, ../../../app/stylesheets/styles.sass */
 #public .container #gifts {
   display: inline;
   float: left;
@@ -363,7 +369,7 @@ body {
   margin-right: 1.042%;
   margin-bottom: 20px;
 }
-/* line 268, ../../../app/stylesheets/styles.sass */
+/* line 272, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift {
   display: inline;
   float: left;
@@ -372,7 +378,7 @@ body {
   margin-right: 1.042%;
   margin-bottom: 15px;
 }
-/* line 272, ../../../app/stylesheets/styles.sass */
+/* line 276, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .pic {
   display: inline;
   float: left;
@@ -380,11 +386,11 @@ body {
   width: 15.794%;
   margin-right: 1.042%;
 }
-/* line 274, ../../../app/stylesheets/styles.sass */
+/* line 278, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .pic img {
   width: 90%;
 }
-/* line 279, ../../../app/stylesheets/styles.sass */
+/* line 283, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .gift_description {
   display: inline;
   float: left;
@@ -393,16 +399,20 @@ body {
   margin-right: 1.042%;
   margin-right: 0;
 }
-/* line 283, ../../../app/stylesheets/styles.sass */
+/* line 287, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .gift_description h3 {
   margin: 5px 0 10px 0;
 }
-/* line 287, ../../../app/stylesheets/styles.sass */
+/* line 291, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .gift_description .description p {
   margin-bottom: 10px;
 }
-/* line 290, ../../../app/stylesheets/styles.sass */
+/* line 294, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .gift_description .price {
   font-size: 0.9em;
   color: #666666;
+}
+/* line 298, ../../../app/stylesheets/styles.sass */
+#public #main h2 {
+  margin-bottom: 0.5em;
 }
