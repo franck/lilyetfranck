@@ -1,0 +1,403 @@
+/* line 19, ../../../app/stylesheets/styles.sass */
+body {
+  background: #eeeeee;
+  font-family: "arial";
+}
+
+/* line 23, ../../../app/stylesheets/styles.sass */
+#public {
+  font-size: 0.9em;
+  color: #333333;
+}
+/* line 27, ../../../app/stylesheets/styles.sass */
+#public h1, #public h2, #public h3, #public h4 {
+  font-family: "IM Fell Double Pica SC", arial, serif;
+  color: #666666;
+}
+/* line 30, ../../../app/stylesheets/styles.sass */
+#public h1 a, #public h2 a, #public h3 a, #public h4 a {
+  text-decoration: none;
+}
+/* line 33, ../../../app/stylesheets/styles.sass */
+#public h2 {
+  font-size: 1.4em;
+  margin-bottom: 1.4em;
+}
+/* line 37, ../../../app/stylesheets/styles.sass */
+#public h3 {
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+}
+/* line 41, ../../../app/stylesheets/styles.sass */
+#public a {
+  color: #666666;
+}
+/* line 44, ../../../app/stylesheets/styles.sass */
+#public p {
+  margin-bottom: 15px;
+}
+/* line 48, ../../../app/stylesheets/styles.sass */
+#public .button {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  padding: 6px 12px;
+  width: auto;
+  height: auto;
+  line-height: auto;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  position: relative;
+  /* BACKGROUND GRADIENTS */
+  background: #014464;
+  background: -moz-linear-gradient(top, #0c5f85, #0b5273 50%, #024869 51%, #003853);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c5f85), color-stop(0.5, #0b5273), color-stop(0.51, #024869), to(#003853));
+  /* BORDER RADIUS */
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #eeeeee;
+  /* TEXT SHADOW */
+  /* BOX SHADOW */
+  -moz-box-shadow: 0 1px 3px black;
+  -webkit-box-shadow: 0 1px 3px black;
+  box-shadow: 0 1px 3px black;
+}
+/* line 84, ../../../app/stylesheets/styles.sass */
+#public .container {
+  min-width: 950px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: inline-block;
+  width: 90%;
+  overflow: visible;
+}
+/* line 8, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+#public .container {
+  display: block;
+}
+/* line 89, ../../../app/stylesheets/styles.sass */
+#public .container #header {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 99.974%;
+  margin-right: 1.042%;
+  margin-top: 12px;
+}
+/* line 92, ../../../app/stylesheets/styles.sass */
+#public .container #header h1 {
+  font-size: 24px;
+}
+/* line 94, ../../../app/stylesheets/styles.sass */
+#public .container #header h1 a {
+  text-decoration: none;
+  color: #666666;
+}
+/* line 98, ../../../app/stylesheets/styles.sass */
+#public .container #top {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 91.556%;
+  margin-right: 1.042%;
+  padding-left: 4.209%;
+  padding-right: 4.209%;
+  margin-right: 0;
+  margin-top: 10px;
+}
+/* line 105, ../../../app/stylesheets/styles.sass */
+#public .container #top h1 {
+  font-family: "IM Fell Double Pica SC", arial, serif;
+  color: #666666;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+/* line 112, ../../../app/stylesheets/styles.sass */
+#public .container #top h1 a {
+  text-decoration: none;
+  color: #666666;
+}
+/* line 116, ../../../app/stylesheets/styles.sass */
+#public .container #top #nav {
+  float: left;
+  margin-bottom: 15px;
+  width: 100%;
+}
+/* line 120, ../../../app/stylesheets/styles.sass */
+#public .container #top #nav ul {
+  float: left;
+  list-style: none;
+  margin: 0;
+}
+/* line 125, ../../../app/stylesheets/styles.sass */
+#public .container #top #nav ul li {
+  float: left;
+  padding: 10px 20px 10px 0;
+}
+/* line 129, ../../../app/stylesheets/styles.sass */
+#public .container #top #nav ul li a {
+  text-decoration: none;
+  font-size: 22px;
+  font-family: "IM Fell Double Pica SC", arial, serif;
+  border-bottom: 3px solid #666666;
+  -webkit-transition: border 0.3s ease-out;
+  -moz-transition-property: border 0.3s ease-out;
+  -o-transition: border 0.3s ease-out;
+}
+/* line 137, ../../../app/stylesheets/styles.sass */
+#public .container #top #nav ul li a:hover {
+  border-bottom: 10px solid #666666;
+}
+/* line 140, ../../../app/stylesheets/styles.sass */
+#public .container #intro {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 99.974%;
+  margin-right: 1.042%;
+  margin-right: 0;
+  height: 90px;
+  margin: 0 0 20px 0;
+  padding: 15px 0;
+  background: -moz-linear-gradient(top, #333333, #eeeeee);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.005, white), color-stop(0.01, #dedede), color-stop(0.99, #eeeeee), color-stop(0.995, white), to(white));
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+/* line 152, ../../../app/stylesheets/styles.sass */
+#public .container #intro p {
+  max-width: 40%;
+  margin-left: 4.209%;
+}
+/* line 156, ../../../app/stylesheets/styles.sass */
+#public .container #top_photos {
+  position: absolute;
+  top: 60px;
+  right: 5%;
+  width: auto;
+  margin: 0;
+}
+/* line 163, ../../../app/stylesheets/styles.sass */
+#public .container #top_photos li {
+  list-style: none;
+  float: left;
+  padding: 0 15px 10px 0;
+  margin: 0px;
+}
+/* line 169, ../../../app/stylesheets/styles.sass */
+#public .container #top_photos li img {
+  float: left;
+  background: white;
+  border: 1px solid #aaaaaa;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: #aaaaaa 1px 1px 5px;
+  -webkit-box-shadow: #aaaaaa 1px 1px 5px;
+  -o-box-shadow: #aaaaaa 1px 1px 5px;
+  box-shadow: #aaaaaa 1px 1px 5px;
+  -webkit-transform: rotate(-5deg);
+  padding: 10px;
+}
+/* line 179, ../../../app/stylesheets/styles.sass */
+#public .container #top_photos li .first {
+  width: 160px;
+  -moz-transform: rotate(-5deg);
+  -webkit-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  margin-right: -40px;
+  margin-top: 40px;
+  z-index: 3;
+}
+/* line 185, ../../../app/stylesheets/styles.sass */
+#public .container #top_photos li .second {
+  width: 180px;
+  -moz-transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  transform: rotate(2deg);
+  z-index: 2;
+}
+/* line 189, ../../../app/stylesheets/styles.sass */
+#public .container #top_photos li .third {
+  width: 140px;
+  -moz-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  margin-left: -40px;
+  margin-top: 40px;
+  z-index: 3;
+}
+/* line 196, ../../../app/stylesheets/styles.sass */
+#public .container #content {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 99.974%;
+  margin-right: 1.042%;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+  background-color: white;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -o-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: #666666 1px 1px 5px;
+  -webkit-box-shadow: #666666 1px 1px 5px;
+  -o-box-shadow: #666666 1px 1px 5px;
+  box-shadow: #666666 1px 1px 5px;
+}
+/* line 206, ../../../app/stylesheets/styles.sass */
+#public .container #content #main {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 66.302%;
+  margin-right: 1.042%;
+  padding-left: 4.209%;
+  padding-right: 4.209%;
+  background: pink;
+}
+/* line 212, ../../../app/stylesheets/styles.sass */
+#public .container #content #sidebar {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 20.003%;
+  margin-right: 1.042%;
+  padding-right: 4.209%;
+  margin-right: 0;
+}
+/* line 220, ../../../app/stylesheets/styles.sass */
+#public .container #footer {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 99.974%;
+  margin-right: 1.042%;
+}
+/* line 224, ../../../app/stylesheets/styles.sass */
+#public .container #albums .album {
+  clear: left;
+  float: left;
+  margin-bottom: 15px;
+}
+/* line 228, ../../../app/stylesheets/styles.sass */
+#public .container #albums .album .photo {
+  float: left;
+  margin: 0 10px 10px 0;
+  padding: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0px 0px 2px #333333;
+  -webkit-box-shadow: 0px 0px 2px #333333;
+  box-shadow: 0px 0px 2px #333333;
+}
+/* line 235, ../../../app/stylesheets/styles.sass */
+#public .container #albums .album .photo a {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+/* line 240, ../../../app/stylesheets/styles.sass */
+#public .container #albums .album .photo a img {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+/* line 245, ../../../app/stylesheets/styles.sass */
+#public .container #pics {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 91.556%;
+  margin-right: 1.042%;
+  padding-left: 4.209%;
+  padding-right: 4.209%;
+}
+/* line 250, ../../../app/stylesheets/styles.sass */
+#public .container #pics img {
+  width: 80px;
+}
+/* line 252, ../../../app/stylesheets/styles.sass */
+#public .container #pics a {
+  border: 2px solid #eeeeee;
+  padding: 2px;
+  display: block;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+/* line 258, ../../../app/stylesheets/styles.sass */
+#public .container #pics a:hover {
+  border: 2px solid #aaaaaa;
+}
+/* line 261, ../../../app/stylesheets/styles.sass */
+#public .container #gifts {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 99.974%;
+  margin-right: 1.042%;
+  margin-bottom: 20px;
+}
+/* line 266, ../../../app/stylesheets/styles.sass */
+#public .container #gifts .gift {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 99.974%;
+  margin-right: 1.042%;
+  margin-bottom: 15px;
+}
+/* line 270, ../../../app/stylesheets/styles.sass */
+#public .container #gifts .gift .pic {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 15.794%;
+  margin-right: 1.042%;
+}
+/* line 272, ../../../app/stylesheets/styles.sass */
+#public .container #gifts .gift .pic img {
+  width: 90%;
+}
+/* line 277, ../../../app/stylesheets/styles.sass */
+#public .container #gifts .gift .gift_description {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 83.138%;
+  margin-right: 1.042%;
+  margin-right: 0;
+}
+/* line 281, ../../../app/stylesheets/styles.sass */
+#public .container #gifts .gift .gift_description h3 {
+  margin: 5px 0 10px 0;
+}
+/* line 285, ../../../app/stylesheets/styles.sass */
+#public .container #gifts .gift .gift_description .description p {
+  margin-bottom: 10px;
+}
+/* line 288, ../../../app/stylesheets/styles.sass */
+#public .container #gifts .gift .gift_description .price {
+  font-size: 0.9em;
+  color: #666666;
+}

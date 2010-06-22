@@ -1,17 +1,17 @@
 %h2 Liste de cadeaux
 
-%p Si vous ne savez pas quoi nous offrir, voici une liste de choses qui nous manque encore.
+%p On est déjà pas mal équipé mais si vous désirez nous faire un cadeau voici quelques idées.
 
 #gifts
   -for gift in @gifts
     .gift
       
       .pic
-        %a{ :href => gift.link }
+        %a{ :href => gift.link, :target => "_blank" }
           %img{:src => gift.pic }
       
       .gift_description
-        %h3= link_to gift.name, gift.link
+        %h3= link_to gift.name, gift.link, :target => "_blank"
         .description
           = textilize(gift.description)
         .price

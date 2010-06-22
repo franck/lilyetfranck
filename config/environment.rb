@@ -16,6 +16,7 @@ Rails::Initializer.run do |config|
   config.gem 'authlogic'
   
   config.gem 'haml'
+  config.gem 'compass'
   config.gem 'will_paginate'
   config.gem 'http_accept_language'
   config.gem 'flickraw'

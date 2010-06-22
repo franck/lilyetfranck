@@ -1,0 +1,290 @@
+$blueprint_grid_columns: 24
+$blueprint_grid_width: 30px
+$blueprint_grid_margin: 10px
+!header-font: 'IM Fell Double Pica SC', arial, serif
+!nav-font: 'IM Fell Double Pica SC', arial, serif
+
+=shadow(!color = #333, !deep = 4px )
+  -moz-box-shadow: 0px 0px !deep !color
+  -webkit-box-shadow: 0px 0px !deep !color
+  box-shadow: 0px 0px !deep !color
+
+
+//@import "blueprint/grid"
+@import "compass/utilities/general"
+@import "blueprint/liquid"
+@import "compass/css3"
+
+
+body
+  background: #EEE
+  font-family: 'arial'
+
+#public
+  font-size: 0.9em
+  color: #333
+
+  h1, h2, h3, h4
+    font-family: !header-font
+    color: #666
+    a
+      text-decoration: none
+
+  h2
+    font-size: 1.4em
+    margin-bottom: 1.4em
+    
+  h3
+    font-size: 1.2em
+    margin-bottom: 1.2em
+
+  a
+    color: #666
+  
+  p
+    margin-bottom: 15px
+    
+    
+  .button
+    float: left
+    margin-right: 10px
+    margin-bottom: 15px
+    padding: 6px 12px
+    width: auto
+    height: auto
+    line-height: auto
+    color: #FFF
+    text-decoration: none
+    font-size: 12px
+    font-weight: bold
+    display: block
+    text-align: center
+    position: relative
+
+    /* BACKGROUND GRADIENTS */
+    background: #014464
+    background: -moz-linear-gradient(top, #0c5f85, #0b5273 50%, #024869 51%, #003853)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0c5f85), color-stop(.5, #0b5273), color-stop(.51, #024869), to(#003853))
+
+    /* BORDER RADIUS */
+    -moz-border-radius: 3px
+    -webkit-border-radius: 3px
+    border-radius: 3px
+
+    border: 1px solid #EEE
+
+    /* TEXT SHADOW */
+    // text-shadow: 1px 1px 1px black
+
+    /* BOX SHADOW */
+    -moz-box-shadow: 0 1px 3px black
+    -webkit-box-shadow: 0 1px 3px black
+    box-shadow: 0 1px 3px black
+    
+  .container
+    @include container
+    width: 90%
+    overflow: visible
+  
+    #header
+      +column(24)
+      margin-top: 12px
+      h1
+        font-size: 24px
+        a
+          text-decoration: none
+          color: #666
+
+    #top
+      @include column(22)
+      @include prepend(1)
+      @include append(1)
+      @include last
+      margin-top: 10px
+
+      h1  
+        overflow:visible
+        font-family: !header-font
+        color: #666
+        font-size: 36px
+        margin-bottom: 15px
+
+        a
+          text-decoration: none
+          color: #666
+
+      #nav
+        float: left
+        margin-bottom: 15px
+        width: 100%
+        ul
+          float: left
+          list-style: none
+          margin: 0
+
+          li
+            float: left
+            padding: 10px 20px 10px 0
+
+            a
+              text-decoration: none
+              font-size: 22px
+              font-family: !nav-font
+              border-bottom: 3px solid #666
+              -webkit-transition: border .3s ease-out
+              -moz-transition-property: border .3s ease-out
+              -o-transition: border .3s ease-out
+            a:hover
+              border-bottom: 10px solid #666
+              
+    #intro
+      @include column(24)
+      @include last
+      
+      height: 90px
+      margin: 0 0 20px 0
+      padding: 15px 0
+      background: -moz-linear-gradient(top, #333, #EEE)
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(0.005, #FFF), color-stop(0.01, #DEDEDE), color-stop(0.990, #EEE), color-stop(0.995, #FFF), to(#FFF))
+      border-top: 1px solid #DDD
+      border-bottom: 1px solid #DDD
+      
+      p
+        max-width: 40%
+        margin-left: $blueprint_liquid_grid_width + $blueprint_liquid_grid_margin
+
+    #top_photos
+      position: absolute
+      top: 60px
+      right: 5%
+      width: auto
+      margin: 0
+
+      li
+        list-style: none
+        float: left
+        padding: 0 15px 10px 0
+        margin: 0px
+
+        img
+          float: left
+          background: #FFF
+          border: 1px solid #AAA
+          +border-radius(4px)
+          +box-shadow(#AAA)
+          -webkit-transform: rotate(-5deg)
+          padding: 10px
+          //width: 150px
+
+        .first
+          width: 160px
+          +rotate(-5deg)
+          margin-right: -40px
+          margin-top: 40px
+          z-index: 3
+        .second
+          width: 180px
+          +rotate(2deg)
+          z-index: 2
+        .third
+          width: 140px
+          +rotate(-2deg)
+          margin-left: -40px
+          margin-top: 40px
+          z-index: 3              
+          
+    #content
+      @include column(24)
+      padding-top: 10px
+      padding-bottom: 25px
+      margin-bottom: 50px
+    
+      background-color: #FFF
+      +border-radius(12px)
+      +box-shadow(#666)
+      
+      #main
+        @include column(16)
+        @include prepend(1)
+        @include append(1)
+        background: pink
+            
+      #sidebar
+        @include column(5)
+        @include append(1)
+        @include last
+    
+      //+border-radius(12px)
+      //+shadow(#333, 4px)
+
+    #footer
+      @include column(24)
+      
+    #albums
+      .album
+        clear: left
+        float: left
+        margin-bottom: 15px
+        .photo
+          float: left
+          margin: 0 10px 10px 0
+          padding: 3px
+          +border-radius(3px)
+          +shadow(#333, 2px)
+
+          a
+            float: left
+            margin: 0
+            padding: 0
+
+            img
+              float: left
+              margin: 0
+              padding: 0
+
+    #pics
+      +column(22)
+      +prepend(1)
+      +append(1)
+      
+      img 
+        width: 80px
+      a 
+        border: 2px solid #EEE
+        padding: 2px
+        display: block
+        float: left
+        margin: 0 10px 10px 0
+      a:hover
+        border: 2px solid #AAA
+
+    #gifts
+      +column(24)
+      
+      
+      margin-bottom: 20px
+      .gift
+        +column(24)
+        margin-bottom: 15px
+
+        .pic
+          +column(4)
+          img
+            width: 90%
+            
+            
+
+        .gift_description
+          +column(20)
+          +last
+          
+          h3
+            margin: 5px 0 10px 0      
+
+          .description
+            p
+              margin-bottom: 10px
+
+          .price
+            font-size: 0.9em
+            color: #666
