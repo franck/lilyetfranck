@@ -29,8 +29,8 @@ body {
 }
 /* line 38, ../../../app/stylesheets/styles.sass */
 #public h2 {
-  font-size: 1.4em;
-  margin-bottom: 1.4em;
+  font-size: 1.6em;
+  margin-bottom: 1.6em;
 }
 /* line 42, ../../../app/stylesheets/styles.sass */
 #public h3 {
@@ -405,24 +405,25 @@ body {
 }
 /* line 290, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .gift_description h3 {
+  font-size: 1.4em;
   margin: 5px 0 10px 0;
 }
-/* line 294, ../../../app/stylesheets/styles.sass */
+/* line 295, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .gift_description .description p {
   margin-bottom: 10px;
 }
-/* line 297, ../../../app/stylesheets/styles.sass */
+/* line 298, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .gift_description .price {
   font-size: 0.9em;
   color: #666666;
   margin-bottom: 10px;
 }
-/* line 302, ../../../app/stylesheets/styles.sass */
+/* line 303, ../../../app/stylesheets/styles.sass */
 #public .container #gifts .gift .gift_description .admin_links {
   margin-bottom: 10px;
   font-size: 0.9em;
 }
-/* line 306, ../../../app/stylesheets/styles.sass */
+/* line 307, ../../../app/stylesheets/styles.sass */
 #public #main h2 {
   margin-bottom: 0.5em;
 }
