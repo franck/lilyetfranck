@@ -53,4 +53,23 @@ class GiftsController < ApplicationController
     redirect_to gifts_path()
   end
   
+  def edit
+    @gift = Gift.find(params[:id])
+  end
+  
+  def update
+    @gift = Gift.find(params[:id])
+    if @gift.update_attributes(params[:gift])
+      redirect_to edit_pic_gift_path(@gift)
+    else
+      render :edit
+    end
+  end
+  
+  def destroy
+    gift = Gift.find(params[:id])
+    gift.destroy
+    redirect_to gifts_url
+  end
+  
 end

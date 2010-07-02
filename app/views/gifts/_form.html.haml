@@ -1,0 +1,13 @@
+%li
+  =f.label :name, 'Nom du cadeau', :class => "desc required"
+  =f.text_field :name, :size => "50"
+%li
+  =f.label :link, 'Lien vers le site marchand', :class => "desc required"
+  =f.text_field :link, :size => "50"
+%li
+  =f.label :price, 'Prix approximatif', :class => "desc required"
+  =f.text_field :price, :size => '10'
+  €
+%li
+  =f.label :decription, 'Une petite description', :class => "desc"
+  =f.text_area :description, :size => "50x5"

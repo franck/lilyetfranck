@@ -1,0 +1,9 @@
+%h2 Modifier le cadeau
+
+-form_for @gift, :html => { :class => "standard" } do |f|
+  =f.error_messages :header_message => "Impossible de modifier le cadeau"
+  %ul
+    =render(:partial => "form", :locals => { :f => f })
+    %li
+      =f.submit 'Modifier'
+      =link_to 'annuler', gifts_path

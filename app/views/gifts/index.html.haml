@@ -1,6 +1,15 @@
 %h2 Liste de cadeaux
 
-%p On est déjà pas mal équipé mais si vous désirez nous faire un cadeau voici quelques idées.
+%p 
+  On est déjà pas mal équipé mais si vous désirez nous faire un cadeau voici quelques idées. Notre adresse postale jusqu'au 20 août : 
+  %em
+    60 rue bannier, 45000 Orléans. 
+  Après le déménagement : 
+  %em
+    2 av Tirman, 08000 Charleville Mézières. 
+  Pour les djeuns' qui préfèrent les virements, voici le RIB de Franck : 
+  %em
+    10278 06186 00024603341 97
 
 #gifts
   -for gift in @gifts
@@ -18,6 +27,10 @@
           prix approx.
           = gift.price
           €
+        - if show_admin?
+          .admin_links
+            = link_to "modifier", edit_gift_url(gift)
+            = link_to "supprimer", gift_url(gift), :method => :delete
 
 .clear
 - if show_admin?

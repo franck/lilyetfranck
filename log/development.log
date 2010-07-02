@@ -41534,3 +41534,1450 @@ Rendering albums/index
   [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
 Rendered shared/_gallery (0.4ms)
 Completed in 1326ms (View: 1308, DB: 6) | 200 OK [http://localhost/albums]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-07-02 15:12:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 3ms (View: 1, DB: 0) | 401 Unauthorized [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-07-02 15:12:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mAlbum Columns (25.1ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSlug Load (0.4ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Post') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSlug Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `slugs`[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3466') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'crevette') LIMIT 1[0m
+Rendered shared/_gallery (18.0ms)
+Completed in 513ms (View: 364, DB: 32) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:12:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.3ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.9ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3466') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'crevette') LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 153ms (View: 31, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+=== Acl9 access_control expression dump (UsersController)
+((((!controller.send(:current_user).nil? && controller.send(:current_user).has_role?('user', nil))) && Set.new(['index','show']).include?(controller.action_name)) || ((((!controller.send(:current_user).nil? && controller.send(:current_user).has_role?('user', nil)) && controller.send(:user_is_current_user?))) && Set.new(['edit','update']).include?(controller.action_name)) || (!controller.send(:current_user).nil? && controller.send(:current_user).has_role?('admin', nil))) && (true)
+======
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-07-02 15:12:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3466') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'crevette') LIMIT 1[0m
+Redirected to http://localhost:3000/login
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-07-02 15:12:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3466') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'crevette') LIMIT 1[0m
+Rendering template within layouts/login
+Rendering user_sessions/new
+Rendered shared/_languages (0.7ms)
+Rendered shared/_flashes (0.8ms)
+Completed in 49ms (View: 24, DB: 2) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-02 15:12:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/en.png" with {:host=>"localhost", :domain=>"localhost", :port=>3000, :host_with_port=>"localhost:3000", :method=>:get, :subdomain=>nil}):
+  haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-02 15:12:24) [POST]
+  Parameters: {"commit"=>"<span class=\"translation_missing\">en, authlogic, submit</span>", "user_session"=>{"remember_me"=>"1", "password"=>"[FILTERED]", "email"=>"franck.dagostini@gmail.com"}, "action"=>"create", "authenticity_token"=>"KiML6MTUFwfWzyGSIMSHVaUUukM7mE7bRI/MGMK41Bg=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3466') LIMIT 1[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'crevette') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'franck.dagostini@gmail.com') LIMIT 1[0m
+Rendering template within layouts/login
+Rendering user_sessions/new
+Rendered shared/_languages (0.1ms)
+Rendered shared/_flashes (0.1ms)
+Completed in 50ms (View: 10, DB: 3) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-02 15:12:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/en.png" with {:host=>"localhost", :domain=>"localhost", :port=>3000, :host_with_port=>"localhost:3000", :method=>:get, :subdomain=>nil}):
+  haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-07-02 15:12:28) [POST]
+  Parameters: {"commit"=>"<span class=\"translation_missing\">en, authlogic, submit</span>", "user_session"=>{"remember_me"=>"1", "password"=>"[FILTERED]", "email"=>"franck.dagostini@gmail.com"}, "action"=>"create", "authenticity_token"=>"KiML6MTUFwfWzyGSIMSHVaUUukM7mE7bRI/MGMK41Bg=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '3466') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'crevette') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.email) = 'franck.dagostini@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSlug Load (0.3ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'User') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-07-02 13:12:28', `perishable_token` = 'NNU7FG9GPnS7_HyzOPJJ' WHERE `id` = 1[0m
+  [4;35;1mSlug Load (0.2ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'User') ORDER BY id DESC[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 219ms (DB: 3) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-07-02 15:12:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.8ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.6ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSlug Load (0.3ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Post') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.4ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.5ms)
+Completed in 139ms (View: 116, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:12:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.6ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (1.0ms)
+Completed in 122ms (View: 103, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:12:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.8ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.7ms)
+Completed in 127ms (View: 107, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:13:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 131ms (View: 109, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:13:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (1.3ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (2.5ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.8ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 72ms (View: 42, DB: 15) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:13:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.4ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 125ms (View: 104, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:14:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.8ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 134ms (View: 114, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:14:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.3ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 128ms (View: 35, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#destroy (for 127.0.0.1 at 2010-07-02 15:15:01) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"KiML6MTUFwfWzyGSIMSHVaUUukM7mE7bRI/MGMK41Bg=", "id"=>"1", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGift Destroy (0.1ms)[0m   [0;1mDELETE FROM `gifts` WHERE `id` = 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/gifts
+Completed in 21ms (DB: 5) | 302 Found [http://localhost/gifts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:15:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.9ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 123ms (View: 97, DB: 8) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#new (for 127.0.0.1 at 2010-07-02 15:16:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+Rendering template within layouts/application
+Rendering gifts/new
+Rendered shared/_gallery (0.4ms)
+Completed in 42ms (View: 25, DB: 4) | 200 OK [http://localhost/gifts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#create (for 127.0.0.1 at 2010-07-02 15:16:41) [POST]
+  Parameters: {"commit"=>"Ajouter", "action"=>"create", "authenticity_token"=>"KiML6MTUFwfWzyGSIMSHVaUUukM7mE7bRI/MGMK41Bg=", "controller"=>"gifts", "gift"=>{"price"=>"290", "name"=>"PS3", "description"=>"", "link"=>"http://www.amazon.fr/Console-PS3-Slim-120-Go/dp/B003L771LA/ref=sr_tr_1?ie=UTF8&s=videogames&qid=1278076588&sr=8-1"}}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGift Create (0.2ms)[0m   [0mINSERT INTO `gifts` (`name`, `price`, `created_at`, `quantity`, `updated_at`, `link`, `description`, `pic`) VALUES('PS3', '290', '2010-07-02 13:16:41', NULL, '2010-07-02 13:16:41', 'http://www.amazon.fr/Console-PS3-Slim-120-Go/dp/B003L771LA/ref=sr_tr_1?ie=UTF8&s=videogames&qid=1278076588&sr=8-1', '', NULL)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/gifts/11/edit_pic
+Completed in 96ms (DB: 4) | 302 Found [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#edit_pic (for 127.0.0.1 at 2010-07-02 15:16:41) [GET]
+  Parameters: {"action"=>"edit_pic", "id"=>"11", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.7ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.6ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/31YgtsIKd1L._SL500_AA300_.jpg
+SRC : http://g-ecx.images-amazon.com/images/G/08/products/software/2010/Generic-Promo-75s._SS50_V211134634_.jpg
+SRC : http://g-ecx.images-amazon.com/images/G/03/videogames/slate/ps3_slate._SX320_SY240_CR0,0,0,0_.jpg
+SRC : 
+SRC : http://g-ecx.images-amazon.com/images/G/03/videogames/slate/ps3_slate._SX320_SY240_CR0,0,0,0_.jpg
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/31YgtsIKd1L._SL500_SS75_.jpg
+SRC : http://ecx.images-amazon.com/images/I/517PlhGzFvL._SL500_SS75_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51je-vzO9LL._SL500_SS75_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51zgDO0Y2fL._SL500_SS90_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51je-vzO9LL._SL500_SS90_.jpg
+SRC : http://ecx.images-amazon.com/images/I/41rG0%2B9wxXL._SL500_SS90_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51WFfeP91uL._SL500_SS90_.jpg
+SRC : http://ecx.images-amazon.com/images/I/61IL-I0cjOL._SL500_SS90_.jpg
+SRC : 
+SRC : 
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/31YgtsIKd1L._SL75_SS50_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51je-vzO9LL._SL75_SS50_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51Lemd2rHUL._SL75_SS50_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51IQAZNVmQL._SL75_SS50_.jpg
+SRC : http://g-ecx.images-amazon.com/images/G/08/x-locale/communities/reviews/videoreview._V192553917_.jpg
+SRC : 
+SRC : 
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/41XKXPxw3mL._AA60_.jpg
+SRC : http://ecx.images-amazon.com/images/I/517PlhGzFvL._AA60_.jpg
+SRC : http://ecx.images-amazon.com/images/I/6110ddBzjCL._AA60_.jpg
+SRC : 
+SRC : 
+SRC : 
+Rendering template within layouts/application
+Rendering gifts/edit_pic
+Rendered shared/_gallery (0.4ms)
+Completed in 1801ms (View: 38, DB: 6) | 200 OK [http://localhost/gifts/11/edit_pic]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-02 15:16:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/gift_bw.png" with {:host=>"localhost", :domain=>"localhost", :port=>3000, :host_with_port=>"localhost:3000", :method=>:get, :subdomain=>nil}):
+  haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#update_pic (for 127.0.0.1 at 2010-07-02 15:16:45) [GET]
+  Parameters: {"action"=>"update_pic", "id"=>"11", "controller"=>"gifts", "pic"=>"http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F31YgtsIKd1L._SL500_AA300_.jpg"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGift Update (0.2ms)[0m   [0;1mUPDATE `gifts` SET `pic` = 'http://ecx.images-amazon.com/images/I/31YgtsIKd1L._SL500_AA300_.jpg', `updated_at` = '2010-07-02 13:16:45' WHERE `id` = 11[0m
+  [4;35;1mSQL (25.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/gifts
+Completed in 46ms (DB: 30) | 302 Found [http://localhost/gifts/11/update_pic?pic=http%253A%252F%252Fecx.images-amazon.com%252Fimages%252FI%252F31YgtsIKd1L._SL500_AA300_.jpg]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:16:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.5ms)
+Completed in 58ms (View: 36, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#edit (for 127.0.0.1 at 2010-07-02 15:16:48) [GET]
+  Parameters: {"action"=>"edit", "id"=>"11", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+
+ActionView::MissingTemplate (Missing template gifts/edit.erb in view path app/views):
+  compass (0.10.1) lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+  haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#edit (for 127.0.0.1 at 2010-07-02 15:18:14) [GET]
+  Parameters: {"action"=>"edit", "id"=>"11", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.4ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+Rendering template within layouts/application
+Rendering gifts/edit
+
+ActionView::TemplateError (Inconsistent indentation: 5 spaces were used for indentation, but the rest of the document was indented using 2 spaces.) on line #6 of app/views/gifts/edit.html.haml:
+3: -form_for @gift, :html => { :class => "standard" } do |f|
+4:   =f.error_messages :header_message => "Impossible de modifier le cadeau"
+5:   %ul
+6:      =render(:partial => "form", :locals => { :f => f })
+7:     %li
+8:       =f.submit 'Modifier'
+9:       =link_to 'annuler', gifts_path
+
+    app/views/gifts/edit.html.haml:6
+    haml (3.0.6) lib/haml/precompiler.rb:152:in `tabs'
+    haml (3.0.6) lib/haml/precompiler.rb:134:in `instance_eval'
+    haml (3.0.6) lib/haml/precompiler.rb:134:in `tabs'
+    haml (3.0.6) lib/haml/precompiler.rb:1040:in `block_opened?'
+    haml (3.0.6) lib/haml/precompiler.rb:768:in `render_tag'
+    haml (3.0.6) lib/haml/precompiler.rb:214:in `process_line'
+    haml (3.0.6) lib/haml/precompiler.rb:178:in `precompile'
+    haml (3.0.6) lib/haml/engine.rb:116:in `initialize'
+    haml (3.0.6) rails/./lib/haml/template/plugin.rb:27:in `new'
+    haml (3.0.6) rails/./lib/haml/template/plugin.rb:27:in `compile'
+    haml (3.0.6) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.6) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    compass (0.10.1) lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.1ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#edit (for 127.0.0.1 at 2010-07-02 15:18:57) [GET]
+  Parameters: {"action"=>"edit", "id"=>"11", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+Rendering template within layouts/application
+Rendering gifts/edit
+Rendered gifts/_form (4.3ms)
+Rendered shared/_gallery (0.4ms)
+Completed in 34ms (View: 17, DB: 4) | 200 OK [http://localhost/gifts/11/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#update (for 127.0.0.1 at 2010-07-02 15:19:02) [PUT]
+  Parameters: {"commit"=>"Modifier", "action"=>"update", "_method"=>"put", "authenticity_token"=>"KiML6MTUFwfWzyGSIMSHVaUUukM7mE7bRI/MGMK41Bg=", "id"=>"11", "controller"=>"gifts", "gift"=>{"price"=>"300", "name"=>"PS3", "description"=>"", "link"=>"http://www.amazon.fr/Console-PS3-Slim-120-Go/dp/B003L771LA/ref=sr_tr_1?ie=UTF8&s=videogames&qid=1278076588&sr=8-1"}}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGift Update (0.2ms)[0m   [0;1mUPDATE `gifts` SET `updated_at` = '2010-07-02 13:19:02', `price` = '300' WHERE `id` = 11[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/gifts/11/edit_pic
+Completed in 22ms (DB: 5) | 302 Found [http://localhost/gifts/11]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#edit_pic (for 127.0.0.1 at 2010-07-02 15:19:02) [GET]
+  Parameters: {"action"=>"edit_pic", "id"=>"11", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.9ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/31YgtsIKd1L._SL500_AA300_.jpg
+SRC : http://g-ecx.images-amazon.com/images/G/08/products/software/2010/Generic-Promo-75s._SS50_V211134634_.jpg
+SRC : http://g-ecx.images-amazon.com/images/G/03/videogames/slate/ps3_slate._SX320_SY240_CR0,0,0,0_.jpg
+SRC : 
+SRC : http://g-ecx.images-amazon.com/images/G/03/videogames/slate/ps3_slate._SX320_SY240_CR0,0,0,0_.jpg
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/31YgtsIKd1L._SL500_SS75_.jpg
+SRC : http://ecx.images-amazon.com/images/I/517PlhGzFvL._SL500_SS75_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51je-vzO9LL._SL500_SS75_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51zgDO0Y2fL._SL500_SS90_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51je-vzO9LL._SL500_SS90_.jpg
+SRC : http://ecx.images-amazon.com/images/I/41rG0%2B9wxXL._SL500_SS90_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51WFfeP91uL._SL500_SS90_.jpg
+SRC : http://ecx.images-amazon.com/images/I/61IL-I0cjOL._SL500_SS90_.jpg
+SRC : 
+SRC : 
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/31YgtsIKd1L._SL75_SS50_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51je-vzO9LL._SL75_SS50_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51Lemd2rHUL._SL75_SS50_.jpg
+SRC : http://ecx.images-amazon.com/images/I/51IQAZNVmQL._SL75_SS50_.jpg
+SRC : http://g-ecx.images-amazon.com/images/G/08/x-locale/communities/reviews/videoreview._V192553917_.jpg
+SRC : 
+SRC : 
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/517PlhGzFvL._AA60_.jpg
+SRC : http://ecx.images-amazon.com/images/I/61FlFV6Y5fL._AA60_.jpg
+SRC : http://ecx.images-amazon.com/images/I/515JSMoiQEL._AA60_.jpg
+SRC : 
+SRC : 
+SRC : 
+Rendering template within layouts/application
+Rendering gifts/edit_pic
+Rendered shared/_gallery (0.4ms)
+Completed in 1487ms (View: 12, DB: 5) | 200 OK [http://localhost/gifts/11/edit_pic]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-02 15:19:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/gift_bw.png" with {:host=>"localhost", :domain=>"localhost", :port=>3000, :host_with_port=>"localhost:3000", :method=>:get, :subdomain=>nil}):
+  haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#update_pic (for 127.0.0.1 at 2010-07-02 15:19:06) [GET]
+  Parameters: {"action"=>"update_pic", "id"=>"11", "controller"=>"gifts", "pic"=>"http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F31YgtsIKd1L._SL500_AA300_.jpg"}
+  [4;36;1mAlbum Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/gifts
+Completed in 92ms (DB: 4) | 302 Found [http://localhost/gifts/11/update_pic?pic=http%253A%252F%252Fecx.images-amazon.com%252Fimages%252FI%252F31YgtsIKd1L._SL500_AA300_.jpg]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:19:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.4ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 56ms (View: 33, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#destroy (for 127.0.0.1 at 2010-07-02 15:19:09) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"KiML6MTUFwfWzyGSIMSHVaUUukM7mE7bRI/MGMK41Bg=", "id"=>"11", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.3ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 11) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGift Destroy (0.1ms)[0m   [0;1mDELETE FROM `gifts` WHERE `id` = 11[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/gifts
+Completed in 20ms (DB: 5) | 302 Found [http://localhost/gifts/11]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:19:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.7ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.3ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.9ms)
+Completed in 127ms (View: 103, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:20:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (1.1ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 128ms (View: 108, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:20:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.6ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 127ms (View: 108, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:22:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.3ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.5ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 60ms (View: 38, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:23:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (1.5ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+
+ActionView::TemplateError (Illegal nesting: content can't be both given on the same line as %p and nested within it.) on line #4 of app/views/gifts/index.html.haml:
+1: %h2 Liste de cadeaux
+2: 
+3: %p On est déjà pas mal équipé mais si vous désirez nous faire un cadeau voici quelques idées. Notre adresse postale jusqu'au 20 août : 60 rue bannier, 45000 Orléans. Après notre déménagement : 2 av Tirman, 08000 Charleville Mézières. Pour les djeuns' qui préfèrent les virements, voici le RIB de Franck : 
+4:   %strong
+5:     10278 06186 00024603341 97
+6: 
+7: #gifts
+
+    app/views/gifts/index.html.haml:4
+    haml (3.0.6) lib/haml/precompiler.rb:773:in `render_tag'
+    haml (3.0.6) lib/haml/precompiler.rb:214:in `process_line'
+    haml (3.0.6) lib/haml/precompiler.rb:178:in `precompile'
+    haml (3.0.6) lib/haml/engine.rb:116:in `initialize'
+    haml (3.0.6) rails/./lib/haml/template/plugin.rb:27:in `new'
+    haml (3.0.6) rails/./lib/haml/template/plugin.rb:27:in `compile'
+    haml (3.0.6) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.6) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    compass (0.10.1) lib/compass/app_integration/rails/actionpack2/action_controller.rb:7:in `process'
+    haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:23:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 58ms (View: 37, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:24:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.4ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 58ms (View: 37, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:24:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 127ms (View: 107, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:24:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.3ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 130ms (View: 39, DB: 7) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:25:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 58ms (View: 38, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:25:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;36;1mGift Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.5ms)
+Completed in 58ms (View: 38, DB: 6) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#edit (for 127.0.0.1 at 2010-07-02 15:25:46) [GET]
+  Parameters: {"action"=>"edit", "id"=>"9", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 9) [0m
+Rendering template within layouts/application
+Rendering gifts/edit
+Rendered gifts/_form (1.9ms)
+Rendered shared/_gallery (0.4ms)
+Completed in 27ms (View: 8, DB: 4) | 200 OK [http://localhost/gifts/9/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#update (for 127.0.0.1 at 2010-07-02 15:25:56) [PUT]
+  Parameters: {"commit"=>"Modifier", "action"=>"update", "_method"=>"put", "authenticity_token"=>"KiML6MTUFwfWzyGSIMSHVaUUukM7mE7bRI/MGMK41Bg=", "id"=>"9", "controller"=>"gifts", "gift"=>{"price"=>"35", "name"=>"Tapis puzzle", "description"=>"Faut bien s'amuser un peu", "link"=>"http://www.amazon.fr/PUZZLE-MOUSSE-ANIMAUX-PIECES-160x128/dp/B002QVZORA/ref=pd_sim_sbs_ce_12"}}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.3ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 9) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGift Update (0.2ms)[0m   [0;1mUPDATE `gifts` SET `updated_at` = '2010-07-02 13:25:56', `description` = 'Faut bien s\'amuser un peu' WHERE `id` = 9[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/gifts/9/edit_pic
+Completed in 24ms (DB: 4) | 302 Found [http://localhost/gifts/9]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#edit_pic (for 127.0.0.1 at 2010-07-02 15:25:56) [GET]
+  Parameters: {"action"=>"edit_pic", "id"=>"9", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (1.0ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 9) [0m
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : http://ecx.images-amazon.com/images/I/61B1gMSdEFL._SL500_AA300_.jpg
+SRC : 
+SRC : http://g-ecx.images-amazon.com/images/G/08/x-locale/communities/reviews/videoreview._V192553917_.jpg
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+Rendering template within layouts/application
+Rendering gifts/edit_pic
+Rendered shared/_gallery (0.4ms)
+Completed in 2953ms (View: 5, DB: 6) | 200 OK [http://localhost/gifts/9/edit_pic]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-02 15:25:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/gift_bw.png" with {:host=>"localhost", :domain=>"localhost", :port=>3000, :host_with_port=>"localhost:3000", :method=>:get, :subdomain=>nil}):
+  haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#update_pic (for 127.0.0.1 at 2010-07-02 15:27:21) [GET]
+  Parameters: {"action"=>"update_pic", "id"=>"9", "controller"=>"gifts", "pic"=>"http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F61B1gMSdEFL._SL500_AA300_.jpg"}
+  [4;36;1mAlbum Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+  [4;35;1mGift Load (0.2ms)[0m   [0mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/gifts
+Completed in 20ms (DB: 5) | 302 Found [http://localhost/gifts/9/update_pic?pic=http%253A%252F%252Fecx.images-amazon.com%252Fimages%252FI%252F61B1gMSdEFL._SL500_AA300_.jpg]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:27:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (2.5ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.5ms)
+Completed in 128ms (View: 103, DB: 9) | 200 OK [http://localhost/gifts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#new (for 127.0.0.1 at 2010-07-02 15:28:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `gifts`[0m
+Rendering template within layouts/application
+Rendering gifts/new
+Rendered gifts/_form (2.4ms)
+Rendered shared/_gallery (0.4ms)
+Completed in 30ms (View: 13, DB: 4) | 200 OK [http://localhost/gifts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#create (for 127.0.0.1 at 2010-07-02 15:30:34) [POST]
+  Parameters: {"commit"=>"Ajouter", "action"=>"create", "authenticity_token"=>"KiML6MTUFwfWzyGSIMSHVaUUukM7mE7bRI/MGMK41Bg=", "controller"=>"gifts", "gift"=>{"price"=>"45", "name"=>"Mobile 3 elfes Chicco", "description"=>"Attention, il est super dur à trouver celui là !!", "link"=>"http://www.bimbomarket.it/gb/fr/relax-&-play-colours-cot-mobile-P16587.htm"}}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGift Create (0.2ms)[0m   [0mINSERT INTO `gifts` (`name`, `price`, `created_at`, `quantity`, `updated_at`, `link`, `description`, `pic`) VALUES('Mobile 3 elfes Chicco', '45', '2010-07-02 13:30:34', NULL, '2010-07-02 13:30:34', 'http://www.bimbomarket.it/gb/fr/relax-&-play-colours-cot-mobile-P16587.htm', 'Attention, il est super dur à trouver celui là !!', NULL)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/gifts/12/edit_pic
+Completed in 22ms (DB: 4) | 302 Found [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#edit_pic (for 127.0.0.1 at 2010-07-02 15:30:34) [GET]
+  Parameters: {"action"=>"edit_pic", "id"=>"12", "controller"=>"gifts"}
+  [4;35;1mAlbum Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.3ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 12) [0m
+SRC : 
+SRC : 
+SRC : 
+SRC : /data/categoria/40.jpg
+SRC : /data/categoria/38.jpg
+SRC : /data/categoria/206.jpg
+SRC : /data/categoria/176.jpg
+SRC : /data/categoria/34.jpg
+SRC : /data/categoria/161.jpg
+SRC : /data/categoria/41.jpg
+SRC : /data/categoria/205.jpg
+SRC : /data/categoria/57.jpg
+SRC : /data/categoria/60.jpg
+SRC : /data/categoria/61.jpg
+SRC : /data/categoria/62.jpg
+SRC : /data/categoria/198.jpg
+SRC : /data/categoria/63.jpg
+SRC : /data/categoria/184.jpg
+SRC : /data/categoria/173.jpg
+SRC : /data/categoria/156.jpg
+SRC : /data/categoria/154.jpg
+SRC : /data/categoria/155.jpg
+SRC : /data/categoria/158.jpg
+SRC : /data/categoria/200.jpg
+SRC : /data/categoria/201.jpg
+SRC : /data/categoria/14.jpg
+SRC : /data/categoria/13.jpg
+SRC : /data/categoria/15.jpg
+SRC : /data/categoria/10.jpg
+SRC : /data/categoria/11.jpg
+SRC : /data/categoria/16.jpg
+SRC : /data/categoria/159.jpg
+SRC : /data/categoria/160.jpg
+SRC : /data/categoria/18.jpg
+SRC : /data/categoria/19.jpg
+SRC : /data/categoria/44.jpg
+SRC : /data/categoria/48.jpg
+SRC : /data/categoria/46.jpg
+SRC : /data/categoria/47.jpg
+SRC : /data/categoria/179.jpg
+SRC : /data/categoria/182.jpg
+SRC : /data/categoria/181.jpg
+SRC : /data/categoria/180.jpg
+SRC : /data/categoria/202.jpg
+SRC : /data/categoria/59.jpg
+SRC : /data/categoria/31.jpg
+SRC : /data/categoria/32.jpg
+SRC : /data/categoria/42.jpg
+SRC : /data/categoria/49.jpg
+SRC : /data/categoria/210.jpg
+SRC : /data/categoria/120.jpg
+SRC : /data/categoria/122.jpg
+SRC : /data/categoria/125.jpg
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : /data/imgprodotto/6587.jpg
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : /img/facebook_ico.jpg
+SRC : 
+SRC : 
+SRC : /data/imgprodotto/2162_list.jpg
+SRC : /data/imgprodotto/2996_list.jpg
+SRC : /data/imgprodotto/562_list.jpg
+SRC : /data/imgprodotto/454_list.jpg
+SRC : /data/imgprodotto/1267_list.jpg
+SRC : /data/imgprodotto/481_list.jpg
+SRC : /data/imgprodotto/1886_list.jpg
+SRC : /data/imgprodotto/7598_list.jpg
+SRC : /data/imgprodotto/792_list.jpg
+SRC : /data/imgprodotto/6729_list.jpg
+SRC : 
+SRC : 
+SRC : /data/banner/100_fr.jpg?20100413_175219
+SRC : /data/banner/69_fr.jpg?20100412_122241
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+SRC : 
+Rendering template within layouts/application
+Rendering gifts/edit_pic
+Rendered shared/_gallery (0.4ms)
+Completed in 1319ms (View: 25, DB: 4) | 200 OK [http://localhost/gifts/12/edit_pic]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-02 15:30:36) [GET]
+
+ActionController::RoutingError (No route matches "/images/gift_bw.png" with {:host=>"localhost", :domain=>"localhost", :port=>3000, :host_with_port=>"localhost:3000", :method=>:get, :subdomain=>nil}):
+  haml (3.0.6) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#update_pic (for 127.0.0.1 at 2010-07-02 15:30:40) [GET]
+  Parameters: {"action"=>"update_pic", "id"=>"12", "controller"=>"gifts", "pic"=>"http%3A%2F%2Fwww.bimbomarket.it%2Fdata%2Fimgprodotto%2F6587.jpg"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mGift Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` WHERE (`gifts`.`id` = 12) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGift Update (0.2ms)[0m   [0;1mUPDATE `gifts` SET `pic` = 'http://www.bimbomarket.it/data/imgprodotto/6587.jpg', `updated_at` = '2010-07-02 13:30:40' WHERE `id` = 12[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/gifts
+Completed in 22ms (DB: 4) | 302 Found [http://localhost/gifts/12/update_pic?pic=http%253A%252F%252Fwww.bimbomarket.it%252Fdata%252Fimgprodotto%252F6587.jpg]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GiftsController#index (for 127.0.0.1 at 2010-07-02 15:30:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"gifts"}
+  [4;36;1mAlbum Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.8ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mGift Load (0.2ms)[0m   [0;1mSELECT * FROM `gifts` [0m
+Rendering template within layouts/application
+Rendering gifts/index
+  [4;35;1mGift Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `gifts`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.4ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 123ms (View: 100, DB: 8) | 200 OK [http://localhost/gifts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-07-02 15:30:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mAlbum Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;36;1mPhoto Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSlug Load (0.3ms)[0m   [0mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Post') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mRole Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles`.`name` = 'admin') AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered shared/_gallery (0.4ms)
+Completed in 50ms (View: 28, DB: 7) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-07-02 15:30:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+  [4;36;1mAlbum Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.3ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPost Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (2.0ms)
+Rendered shared/_gallery (0.4ms)
+Completed in 34ms (View: 16, DB: 4) | 200 OK [http://localhost/posts/new]
