@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   
   before_filter :get_top_page_photos
+  before_filter :authenticate, :except => [:index]
   
   def index  
     @posts = Post.paginate :page => params[:page], :order => 'created_at DESC'

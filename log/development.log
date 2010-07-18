@@ -43808,3 +43808,20 @@ Rendering posts/show
   [4;36;1mSlug Load (0.2ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Post') ORDER BY id DESC, id DESC LIMIT 1[0m
 Rendered shared/_gallery (0.4ms)
 Completed in 112ms (View: 31, DB: 6) | 200 OK [http://localhost/posts/ma-premi%C3%A8re-semaine-%C3%A0-la-maison]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#index to xml (for 127.0.0.1 at 2010-07-18 11:20:42) [GET]
+  Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"posts"}
+  [4;36;1mAlbum Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` ORDER BY albums.created_at DESC[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.album_id = 16) [0m
+  [4;35;1mPhoto Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` ORDER BY created_at DESC LIMIT 0, 10[0m
+Rendering posts/index
+  [4;35;1mPost Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSlug Load (0.4ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 2 AND `slugs`.sluggable_type = 'Post') ORDER BY id DESC, id DESC LIMIT 1[0m
+  [4;35;1mSlug Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `slugs`[0m
+  [4;36;1mSlug Load (0.3ms)[0m   [0;1mSELECT * FROM `slugs` WHERE (`slugs`.sluggable_id = 1 AND `slugs`.sluggable_type = 'Post') ORDER BY id DESC, id DESC LIMIT 1[0m
+Completed in 137ms (View: 115, DB: 5) | 200 OK [http://localhost/posts.xml]
