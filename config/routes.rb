@@ -4,7 +4,9 @@ ActionController::Routing::Routes.draw do |map|
     :update_pic => :get
   }
   map.resources :albums
-  map.resources :posts
+  map.resources :posts, :collection => {
+    :rss => :get
+  }
 
 
   #map.filter "locale"
